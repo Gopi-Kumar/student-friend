@@ -1,0 +1,195 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Roboto;
+}
+
+body {
+  background: #f2f2f7;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+body .ctime {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  background: #0a84ff;
+  color: white;
+  padding: 2rem;
+  font-size: 30px;
+  font-weight: 300;
+}
+body .ctime .square {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+body .ctime .square .meridiem {
+  font-size: 25px;
+  margin: 10px;
+}
+body .add__alarm {
+  position: fixed;
+  bottom: 10px;
+  width: 50px;
+  height: 50px;
+  background: #0a84ff;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  cursor: pointer;
+}
+body .add__alarm button {
+  outline: none;
+  border: none;
+  background: transparent;
+  color: white;
+  font-size: 40px;
+  cursor: pointer;
+}
+body .add__alarm__form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  z-index: 103;
+  top: 42%;
+  display: none;
+}
+body .add__alarm__form .form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+body .add__alarm__form .form h1 {
+  color: white;
+}
+body .add__alarm__form .form .time__setter {
+  margin: 1rem;
+  display: flex;
+  flex-direction: row;
+}
+body .add__alarm__form .form .time__setter .input__field input {
+  background: transparent;
+  outline: none;
+  border: none;
+  font-size: 15px;
+  border-bottom: 2px solid white;
+  color: white;
+}
+body .add__alarm__form .form .time__setter .select__field select {
+  background-color: transparent;
+  color: white;
+  border: none;
+  outline: none;
+}
+body .add__alarm__form .form .time__setter .select__field option {
+  color: black;
+}
+body .add__alarm__form .form .confirm button {
+  padding: 0.5rem 1rem;
+  border: none;
+  outline: none;
+  margin: 1rem;
+  cursor: pointer;
+}
+body .alarm_started {
+  background: #0a84ff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 200px;
+  height: 200px;
+  position: absolute;
+  z-index: 101;
+  top: 40%;
+  border: 5px solid white;
+  border-radius: 50%;
+  color: white;
+  font-size: 20px;
+  display: none;
+}
+body .alarm_started button {
+  border: 0;
+  outline: 0;
+  padding: 0.5rem 1rem;
+  margin: 5px;
+  cursor: pointer;
+}
+body .overlay {
+  display: none;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  background: #0a84ff;
+  z-index: 100;
+}
+body audio {
+  display: none;
+}
+body .alarms {
+  background: white;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+body .alarms .alarm__item {
+  border-bottom: 3px solid #e9e9e9;
+  width: 100%;
+  font-size: 40px;
+  font-weight: 300;
+  padding: 1rem 2rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+body .alarms .alarm__item .timer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+body .alarms .alarm__item .timer .square {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+body .alarms .alarm__item .timer .square #meridiem {
+  font-size: 20px;
+  font-weight: 500;
+  margin: 5px;
+}
+body .alarms .alarm__item .delete__alarm {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  font-size: 15px;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  cursor: pointer;
+  margin-left: 1rem;
+  color: white;
+  background: #0a84ff;
+}
+
+/*# sourceMappingURL=alarm.css.map */

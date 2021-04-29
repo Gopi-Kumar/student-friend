@@ -2,27 +2,27 @@ const services = [
     {
         thumbnail : "alarm-clock.png",
         name : "Alarm",
-        href : "/components/alarm/index.html"
+        href : "alarm.html"
     },
     {
         thumbnail : "checklists.png",
         name : "Todo",
-        href : "/components/alarm/index.html"
+        href : "alarm.html"
     },
     {
         thumbnail : "pencil.png",
         name : "Notes",
-        href : "/components/alarm/index.html"
+        href : "alarm.html"
     },
     {
         thumbnail : "time-management.png",
         name : "Routine",
-        href : "/components/alarm/index.htmlne"
+        href : "alarm.htmlne"
     },
     {
         thumbnail : "books.png",
         name : "Books",
-        href : "/s/alarm/index.html"
+        href : "alarm.html"
     },
 ]
 

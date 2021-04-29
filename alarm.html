@@ -2,11 +2,71 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About</title>
+    <link rel="stylesheet" href="./styles/alarm.css">
+    <link rel="shortcut icon" href="./images/alarm-clock.png" type="image/x-icon">
+    <title>Alarm</title>
 </head>
 <body>
-    <h1>About</h1>
+    <div class="ctime">
+        <div class="square">
+            <div class="digits" id="chr">00</div>
+            <div class="text"> : </div>
+        </div>
+        <div class="square">
+            <div class="digits" id="cmin">00</div>
+            <div class="text"> : </div>
+        </div>
+        <div class="square">
+            <div class="digits" id="csec">00</div>
+            <div class="text"></div>
+        </div>
+        <div class="square">
+           <div class="meridiem">AM</div>
+        </div>
+        
+    </div>
+    <div class="alarms"></div>
+    <div class="add__alarm">
+        <button>+</button>
+    </div>
+    <div class="add__alarm__form">
+        <div class="form">
+            <h1>Set time</h1>
+            <div class="time__setter ">
+               <div class="input__field">
+                    <input type="number" id="hr" min="1" max="12">
+                    <span class="colon"> : </span>
+                    <input type="number" id="min" min="1" max="59" >
+               </div>
+               <div class="select__field">
+                   <select id="select__meridiem">
+                       <option value="am">AM</option>
+                       <option value="pm">PM</option>
+                   </select>
+               </div>
+            </div>
+            <div class="confirm">
+                <button onclick=closeForm()>Cancel
+                </button>
+                <button onclick=addAlarm()>OK</button>
+            </div>
+        </div>
+    </div>
+    <div class="alarm_started">
+        <div class="time">
+            <span id="hr">03</span>
+            <span>:</span>
+            <span id="min">34</span>
+            <span id="mer">AM</span>
+        </div>
+        <button onclick=closeAlarm()>Close alarm</button>
+    </div>
+    <audio controls loop>
+        <source src="./alarm-sound.wav" type="audio/wav">
+    
+    </audio>
+    <div class="overlay"></div>
+    <script src="./scripts/alarm.js"></script>
 </body>
-</html>
+</html> 
