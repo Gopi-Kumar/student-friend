@@ -1,0 +1,43 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+@mixin display_center(){
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@mixin display_as_column(){
+    display: flex;
+    flex-direction: column;
+}
+
+@mixin display_as_column_center(){
+    @include display_as_column;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin display_as_row(){
+    display: flex;
+    flex-direction: row;
+}
+@mixin display_as_row_end {
+    @include display_as_row;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+@mixin display_as_row_center(){
+    @include display_as_row;
+    justify-content: center;
+    align-items: center;
+}
+@mixin display_as_row_space_between(){
+    @include display_as_row;
+    justify-content: space-between;
+    align-items: center;
+}

@@ -1,0 +1,38 @@
+@import './color.scss';
+
+@import './utills.scss';
+
+.app{
+    width: 100vw;
+    min-height: 100vh;
+    background: $light-gray;
+    .services{
+        @include display_center;
+        flex-wrap: wrap;
+
+        .service{
+            @include display_center;
+            flex-direction: column;
+            background: $white;
+            padding:1rem;
+            width:40vw;
+            margin:2px;
+            height:200px;
+            img{
+                width: 50px;
+                height: 50px;
+            }
+            button{
+                border:none;
+                outline:none;
+                background:$apple-blue;
+                color:$white;
+                padding:0.3rem 1rem;
+                cursor: pointer;
+                margin:0.5rem;
+            }
+           
+            
+        }
+    }
+}

@@ -1,0 +1,44 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
+}
+
+.app {
+  width: 100vw;
+  min-height: 100vh;
+  background: #f2f2f7;
+}
+.app .services {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.app .services .service {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background: white;
+  padding: 1rem;
+  width: 40vw;
+  margin: 2px;
+  height: 200px;
+}
+.app .services .service img {
+  width: 50px;
+  height: 50px;
+}
+.app .services .service button {
+  border: none;
+  outline: none;
+  background: #0a84ff;
+  color: white;
+  padding: 0.3rem 1rem;
+  cursor: pointer;
+  margin: 0.5rem;
+}
+
+/*# sourceMappingURL=style.css.map */
