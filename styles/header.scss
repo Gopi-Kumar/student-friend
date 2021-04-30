@@ -1,0 +1,27 @@
+.header{
+    width: 100%;
+    background:$black;
+    color:$white;
+    @include display_as_row_space_between;
+    padding:1rem;
+    flex-wrap: wrap;
+    .logo{
+        font-size: 35px;
+        padding: 1rem;
+    }
+    .navbar{
+
+        a{
+            text-decoration: none;
+            color:$white;
+            padding: 0.3rem 1rem;
+            border-radius: 3px;
+            transition: 1s;
+
+            &:hover{
+                background:rgb(44, 44, 44);
+                border: 1px solid rgb(82, 82, 82);
+            }
+        }
+    }
+}

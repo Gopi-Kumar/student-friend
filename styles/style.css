@@ -6,18 +6,48 @@
   font-family: Roboto;
 }
 
-.app {
-  width: 100vw;
+body {
+  background: #f2f2f7;
+}
+body .home_header {
+  background: #3a3a3c;
+  color: white;
+  padding: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+body .home_header .logo {
+  font-size: 35px;
+}
+body .home_header .about {
+  font-weight: 100;
+}
+body .home_header a {
+  background: white;
+  color: #3a3a3c;
+  text-decoration: none;
+  padding: 0.2rem 1rem;
+  border-radius: 5px;
+}
+body .home_header section {
+  margin: 5px;
+}
+body .app {
+  width: 100%;
   min-height: 100vh;
   background: #f2f2f7;
 }
-.app .services {
+body .app .services {
   display: flex;
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
+  margin-top: 10px;
 }
-.app .services .service {
+body .app .services .service {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -28,11 +58,12 @@
   margin: 2px;
   height: 200px;
 }
-.app .services .service img {
+body .app .services .service img {
   width: 50px;
   height: 50px;
 }
-.app .services .service a {
+body .app .services .service a {
+  font-weight: 100;
   background: #0a84ff;
   color: white;
   padding: 0.3rem 1rem;
@@ -40,7 +71,7 @@
   margin: 0.5rem;
   text-decoration: none;
   border-radius: 5px;
-  font-size: 12px;
+  font-size: 15px;
 }
 
 /*# sourceMappingURL=style.css.map */

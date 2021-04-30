@@ -5,9 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./styles/alarm.css">
     <link rel="shortcut icon" href="./images/alarm-clock.png" type="image/x-icon">
-    <title>Alarm</title>
+    <title>SF::Alarm</title>
 </head>
 <body>
+    <div class="header">
+        <p class="logo">Students Friend</p>
+        <div class="navbar">
+            <a href="index.html" id="backToHome">Back to home</a>
+            <a href="todo.html">Todo</a>
+            <a href="routine.html">Routine</a>
+            <a href="notes.html">Notes</a>
+            <a href="book.html">Books</a>
+        </div>
+    </div>
     <div class="ctime">
         <div class="square">
             <div class="digits" id="chr">00</div>
@@ -23,7 +33,9 @@
         </div>
         <div class="square">
            <div class="meridiem">AM</div>
+           <p style="font-size:15px;">(Current Time)</p>
         </div>
+        
         
     </div>
     <div class="alarms"></div>
