@@ -10,10 +10,6 @@ const alarmTone = document.querySelector('audio');
 const alarmStarted = document.querySelector(".alarm_started");
 // const deleteAlarm = document.getElementsByClassName("delete__alarm");
 
-
-
-
-
 let AlarmId = 1;
 let alarmData = getAlarmFromLocalStorage()
 

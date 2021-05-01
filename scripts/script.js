@@ -19,11 +19,7 @@ const services = [
         name : "Routine",
         href : "alarm.htmlne"
     },
-    {
-        thumbnail : "books.png",
-        name : "Books",
-        href : "alarm.html"
-    },
+
 ]
 
 // Render Services
