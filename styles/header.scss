@@ -10,14 +10,13 @@
         padding: 1rem;
     }
     .navbar{
-
         a{
             text-decoration: none;
             color:$white;
             padding: 0.3rem 1rem;
             border-radius: 3px;
             transition: 1s;
-
+            margin:2px;
             &:hover{
                 background:rgb(44, 44, 44);
                 border: 1px solid rgb(82, 82, 82);

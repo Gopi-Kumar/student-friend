@@ -1,0 +1,61 @@
+@import './color.scss';
+@import './utills.scss';
+@import './header.scss';
+
+body{
+    @include display_as_column_center;
+    width:100%;
+    background:$light-gray;
+    .todos{
+        @include display_as_column;
+        align-items: center;
+        background-color: $white;
+        height: 500px;
+        overflow-y: scroll;
+        font-weight: 300;
+        padding:10px 5px;
+        margin-top: 10px;
+        border: 2px solid $apple-blue;
+        .todo_item{
+            @include display_as_row_space_between;
+            width:300px;
+            padding:5px 0px;
+            font-size: 15px;
+            
+            p{
+                
+            }
+            button{
+                cursor:pointer;
+                background:$apple-blue;
+                border:none;
+                outline: none;
+                padding:0.3em 0.5rem;
+                border-radius: 50%;
+                color:$white;
+            }
+        }
+
+    }
+    .add_todo{
+        position:fixed;
+        bottom:10px;
+        input{
+            width:220px;
+            height:30px;
+            outline-color: $apple-blue;
+        }
+        button{
+            height:30px;
+            cursor:pointer;
+            background:$apple-blue;
+            outline:0;
+            border:0;
+            color:$white;
+            padding:0px 5px;
+            border-radius: 5px;
+        }
+    }
+
+}
+

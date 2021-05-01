@@ -1,0 +1,112 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap");
+@import "./color.css";
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Roboto;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 1px #f2f2f7;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #0a84ff;
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+.header {
+  width: 100%;
+  background: #3a3a3c;
+  color: white;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  flex-wrap: wrap;
+}
+.header .logo {
+  font-size: 35px;
+  padding: 1rem;
+}
+.header .navbar a {
+  text-decoration: none;
+  color: white;
+  padding: 0.3rem 1rem;
+  border-radius: 3px;
+  transition: 1s;
+  margin: 2px;
+}
+.header .navbar a:hover {
+  background: #2c2c2c;
+  border: 1px solid #525252;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  background: #f2f2f7;
+}
+body .todos {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: white;
+  height: 500px;
+  overflow-y: scroll;
+  font-weight: 300;
+  padding: 10px 5px;
+  margin-top: 10px;
+  border: 2px solid #0a84ff;
+}
+body .todos .todo_item {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 300px;
+  padding: 5px 0px;
+  font-size: 15px;
+}
+body .todos .todo_item button {
+  cursor: pointer;
+  background: #0a84ff;
+  border: none;
+  outline: none;
+  padding: 0.3em 0.5rem;
+  border-radius: 50%;
+  color: white;
+}
+body .add_todo {
+  position: fixed;
+  bottom: 10px;
+}
+body .add_todo input {
+  width: 220px;
+  height: 30px;
+  outline-color: #0a84ff;
+}
+body .add_todo button {
+  height: 30px;
+  cursor: pointer;
+  background: #0a84ff;
+  outline: 0;
+  border: 0;
+  color: white;
+  padding: 0px 5px;
+  border-radius: 5px;
+}
+
+/*# sourceMappingURL=todo.css.map */

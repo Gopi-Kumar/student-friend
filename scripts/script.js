@@ -7,7 +7,7 @@ const services = [
     {
         thumbnail : "checklists.png",
         name : "Todo",
-        href : "alarm.html"
+        href : "todo.html"
     },
     {
         thumbnail : "pencil.png",
