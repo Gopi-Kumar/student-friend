@@ -1,6 +1,14 @@
 delete alarm bug
+
 alarm item width 50vw
+
 add label to alarm
-add todo input below todo list
+
+add todo input below todo 
+
 clear todo input field after add todo 
+
 on press enter todo shoud added and alarm also
+
+add checklist infront of todo items
+

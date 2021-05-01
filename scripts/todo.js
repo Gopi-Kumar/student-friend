@@ -1,21 +1,17 @@
-let todos = [
-    {
-        id : Math.random(),
-        todo : "complete css clip path",
-    },
-    {
-        id : Math.random(),
-        todo : "MDN api",
-    },
-    {
-        id : Math.random(),
-        todo : "Laravel tutorial",
-    },
-    {
-        id : Math.random(),
-        todo : "Students friend project",
-    }, 
-]
+let todos;
+
+todos = getTodoFromLocalStorage();
+
+function saveTodoToLocalStorage(){
+    localStorage.setItem("todos", JSON.stringify(todos));
+}
+
+function getTodoFromLocalStorage(){
+    return JSON.parse(localStorage.getItem("todos"))
+}
+
+
+
 
 const todosContainer = document.querySelector(".todos");
 
@@ -44,6 +40,8 @@ function addTodo(){
     if(newTodo){
         todos.push({id : Math.random(), todo : newTodo});
         newTodo.value = "";
+        saveTodoToLocalStorage();
+        todos = getTodoFromLocalStorage();
         renderTodo();
     }
 }
@@ -55,6 +53,8 @@ function deleteTodo(id){
             newTodoData.push(todo);
         }
     });
-    todos = newTodoData
+    todos = newTodoData;
+    saveTodoToLocalStorage();
+    todos = getTodoFromLocalStorage();
     renderTodo();
 }

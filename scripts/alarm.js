@@ -15,20 +15,14 @@ const alarmStarted = document.querySelector(".alarm_started");
 
 
 let AlarmId = 1;
-let alarmData = [
-    {
-        id : Math.random(),
-        hr: "03",
-        min: "23",
-        meridium : "PM"
-    },
-    {
-        id : Math.random(),
-        hr: "12",
-        min: "13",
-        meridium : "AM"
-    }
-]
+let alarmData = getAlarmFromLocalStorage()
+
+function saveAlarmToLocalStorage(){
+    localStorage.setItem("alarms" , JSON.stringify(alarmData));
+}
+function getAlarmFromLocalStorage(){
+    return JSON.parse(localStorage.getItem("alarms"))
+}
 
 renderAlarmData();
 
@@ -91,7 +85,9 @@ function deleteAlarm(id){
             newAlarmData.push(alarm);
         }
     });
-    alarmData = newAlarmData
+    alarmData = newAlarmData;
+    saveAlarmToLocalStorage();
+    alarmData = getAlarmFromLocalStorage();
     renderAlarmData(alarmData);
 }
 //close form function 
@@ -125,6 +121,8 @@ function addAlarm() {
             }
         
             alarmData.push(data);
+            saveAlarmToLocalStorage();
+            alarmData = getAlarmFromLocalStorage();
             renderAlarmData();
             closeForm();
             hideOverlay();
