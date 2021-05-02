@@ -25,6 +25,9 @@ renderAlarmData();
 //rendering all alarm from alarmData
 function renderAlarmData(){
     alarms.innerHTML = "";
+    if(alarmData == null){
+        return;
+    }
     alarmData.map(alarm => {
         renderAlarms(alarm.id, alarm.hr, alarm.min, alarm.meridium);
     })
@@ -115,7 +118,9 @@ function addAlarm() {
                 min: alarmMin,
                 meridium : alarmMeridium
             }
-        
+            if(alarmData == null){
+                alarmData = [];
+            }
             alarmData.push(data);
             saveAlarmToLocalStorage();
             alarmData = getAlarmFromLocalStorage();

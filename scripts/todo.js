@@ -18,6 +18,17 @@ const todosContainer = document.querySelector(".todos");
 
 function renderTodo(){
     todosContainer.innerHTML = "";
+    if(todos == null){
+        const addTodo = document.createElement("div");
+        addTodo.classList.add("add_todo");
+        const html = `
+                <input placeholder="Add new todo" type="text" name="" id="">
+                <button onclick="addTodo()">Add Todo</button>
+                `
+        addTodo.innerHTML = html;
+        todosContainer.appendChild(addTodo);
+        return;
+    }
     todos.map(todoitem => {
         const todoItem = document.createElement("div");
         todoItem.classList.add("todo_item");
@@ -46,6 +57,10 @@ renderTodo();
 function addTodo(){
     const newTodo = document.querySelector(".add_todo input").value;
     if(newTodo){
+
+        if(todos == null){
+            todos = [];
+        }
         todos.push({id : Math.random(), todo : newTodo});
         newTodo.value = "";
         saveTodoToLocalStorage();
