@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SF :: Routine</title>
+    <link rel="stylesheet" href="./styles/routine.css">
+    <script src="./scripts/routine.js" defer></script>
+</head>
+<body>
+    <div class="header">
+        <p class="logo">Students Friend</p>
+        <div class="navbar">
+            <a href="index.html" id="backToHome">Back to home</a>
+            <a href="alarm.html">Alarm</a>
+            <a href="todo.html">Todo</a>
+            <a href="notes.html">Notes</a>
+        </div>
+    </div>
+    <section class="routine_header">
+        <div class="time_section">
+           <div class="time">Time</div>
+           <div class="to_from">
+                 <div class="from">From</div>
+                 <div class="to">To</div>
+           </div>
+        </div>
+        <div class="work_section">
+            <p>Work Name</p>
+        </div>
+     </section>
+    <div class="routine">
+        <!-- <section class="routine_item">
+            <p class="from_time">06:00 AM</p>
+            <p class="to_time">07:00 AM</p>
+            <p class="work_name">Wake Up</p>
+            </section>     -->
+    </div>
+    <section class="add_routine">
+        <div class="from_time_input">
+            <div class="hr">
+                <input placeholder="hours" id="fromHr" type="number" min="1" max="12">
+            </div>
+            <p>:</p>
+            <div class="min">
+                <input type="number" id="fromMin" placeholder="mins" min="1" max="12">
+            </div>
+            <p>&nbsp;</p>
+            <div class="meridium">
+                <select id="fromMeridium">
+                    <option value="null" default id="defaultSelect" >Select </option>
+                    <option value="AM">AM</option>
+                    <option value="PM">PM</option>
+                </select>
+            </div>
+        </div>
+        <div class="to_time_input">
+            <div class="hr">
+                <input type="number" id="toHr" placeholder="hours" min="1" max="12">
+            </div>
+            <p>:</p>
+            <div class="min">
+                <input type="number" id="toMin" placeholder="min" min="1" max="12">
+            </div>
+            <p>&nbsp;</p>
+            <div class="meridium">
+                <select id="toMeridium">
+                    <option id="defaultSelect" value="null" default>Select </option>
+                    <option value="AM">AM</option>
+                    <option value="PM">PM</option>
+                </select>
+            </div>
+        </div>
+        <div class="work_name_input">
+            <input type="text" id="workNameInput">
+            <button onclick="addRoutine()">ADD</button>
+        </div>
+    </section>
+</body>
+</html>

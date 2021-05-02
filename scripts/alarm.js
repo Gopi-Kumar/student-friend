@@ -82,7 +82,7 @@ function deleteAlarm(id){
         }
     });
     alarmData = newAlarmData;
-    saveAlarmToLocalStorage();
+    saveAlarmToLocalStorage(); 
     alarmData = getAlarmFromLocalStorage();
     renderAlarmData(alarmData);
 }

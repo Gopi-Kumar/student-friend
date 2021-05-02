@@ -1,0 +1,181 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap");
+@import "./color.css";
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Roboto;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 1px #f2f2f7;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #0a84ff;
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+.header {
+  width: 100%;
+  background: #3a3a3c;
+  color: white;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  flex-wrap: wrap;
+}
+.header .logo {
+  font-size: 35px;
+  padding: 1rem;
+}
+.header .navbar a {
+  text-decoration: none;
+  color: white;
+  padding: 0.3rem 1rem;
+  border-radius: 3px;
+  transition: 0.3s;
+  border: 1px solid transparent;
+  margin: 2px;
+}
+.header .navbar a:hover {
+  background: #2c2c2c;
+  border: 1px solid #525252;
+}
+
+body {
+  background: #f2f2f7;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+body .routine_header {
+  margin-top: 20px;
+  background: white;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  border-top: 2px solid #0a84ff;
+  border-right: 2px solid #0a84ff;
+}
+body .routine_header .time_section {
+  width: 400px;
+  text-align: center;
+  border-right: 2px solid #0a84ff;
+  border-left: 2px solid #0a84ff;
+}
+body .routine_header .time_section .time {
+  padding: 0.6rem;
+  background: #0a84ff;
+  color: white;
+}
+body .routine_header .time_section .to_from {
+  display: flex;
+  flex-direction: row;
+}
+body .routine_header .time_section .to_from .from, body .routine_header .time_section .to_from .to {
+  width: 200px;
+  padding: 0.5rem;
+}
+body .routine_header .work_section {
+  text-align: center;
+  width: 300px;
+}
+body .routine {
+  width: 700px;
+  background: white;
+  border: 2px solid #0a84ff;
+}
+body .routine .routine_item {
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+}
+body .routine .routine_item .from_time, body .routine .routine_item .to_time {
+  width: 200px;
+  border-right: 2px solid #0a84ff;
+}
+body .routine .routine_item p {
+  padding: 0.5rem;
+  font-weight: 300;
+}
+body .routine .routine_item .work_name {
+  width: 300px;
+}
+body .add_routine {
+  width: 700px;
+  display: flex;
+  flex-direction: row;
+}
+body .add_routine .from_time_input, body .add_routine .to_time_input {
+  width: 200px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 2px solid #0a84ff;
+  border-right: 2px solid #0a84ff;
+  padding: 10px 0px;
+}
+body .add_routine .from_time_input {
+  border-left: 2px solid #0a84ff;
+  padding: 10px 0px;
+}
+body .add_routine .work_name_input {
+  width: 300px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 2px solid #0a84ff;
+  border-right: 2px solid #0a84ff;
+}
+body .add_routine .work_name_input button {
+  outline: 0;
+  border: 2px solid transparent;
+  background: #3a3a3c;
+  color: white;
+  padding: 5px 10px;
+  font-size: 15px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+body .add_routine .work_name_input button:hover {
+  border: 2px solid black;
+  color: #f2f2f7;
+}
+body .add_routine input, body .add_routine select {
+  font-weight: bold;
+  width: 50px;
+  height: 30px;
+  outline: 0;
+  border: 0;
+  border-left: 3px solid #0a84ff;
+  color: #3a3a3c;
+}
+body .add_routine select {
+  width: 70px;
+}
+body .add_routine p {
+  margin: 2px;
+}
+body .add_routine ::placeholder {
+  font-weight: lighter;
+  font-size: 10px;
+}
+body .add_routine #workNameInput {
+  width: 200px;
+}
+
+/*# sourceMappingURL=routine.css.map */

@@ -27,6 +27,14 @@ function renderTodo(){
         todoItem.innerHTML = html;
         todosContainer.appendChild(todoItem);
     })
+    const addTodo = document.createElement("div");
+    addTodo.classList.add("add_todo");
+    const html = `
+            <input placeholder="Add new todo" type="text" name="" id="">
+            <button onclick="addTodo()">Add Todo</button>
+            `
+    addTodo.innerHTML = html;
+    todosContainer.appendChild(addTodo)
 }
 renderTodo();
 

@@ -1,0 +1,120 @@
+@import './color.scss';
+@import './utills.scss';
+@import './header.scss';
+
+body{
+    background:$light-gray;
+    @include display_as_column_center;
+    .routine_header{
+        margin-top: 20px;
+        background:$white;
+        @include display_as_row_center;
+        border-top: 2px solid $apple-blue;
+        border-right: 2px solid $apple-blue;
+
+        .time_section{
+            width: 400px;
+            text-align: center;
+            border-right: 2px solid $apple-blue;
+            border-left: 2px solid $apple-blue;
+
+            .time{
+                padding: 0.6rem;
+                background:$apple-blue;
+                color:$white;
+            }
+            .to_from{
+                @include display_as_row;
+                .from, .to{
+                    width: 200px;
+                    padding:0.5rem;
+                }
+            }
+        }
+        .work_section{
+            text-align: center;
+            width: 300px;
+        }
+    }
+    .routine{
+        width: 700px;
+        background: $white;
+        border:2px solid $apple-blue;
+        .routine_item{
+            text-align: center;
+            @include display_as_row;
+            .from_time, .to_time{
+                width: 200px;
+                border-right: 2px solid $apple-blue;
+            }
+            p{
+                padding:0.5rem;
+                font-weight: 300;
+            }
+            .work_name{
+                width: 300px;
+            }
+        }
+    } 
+    .add_routine{
+        width: 700px;
+        @include display_as_row;
+        .from_time_input, .to_time_input{
+            width:200px;
+            @include display_as_row_center;
+            border-bottom: 2px solid $apple-blue;
+            border-right: 2px solid $apple-blue;
+            padding:10px 0px;
+        }
+        .from_time_input{
+            border-left: 2px solid $apple-blue;
+            padding:10px 0px;
+        }
+        .work_name_input{
+            width: 300px;
+            @include display_as_row_center;
+            border-bottom: 2px solid $apple-blue;
+            border-right: 2px solid $apple-blue;
+            button{
+                outline: 0;
+                border:2px solid transparent;
+                background:$black;
+                color:$white;
+                padding:5px 10px;
+                font-size: 15px;
+                border-radius: 5px;
+                cursor: pointer;
+                &:hover{
+                    border:2px solid black;
+                    color:$light-gray;
+                }
+            }
+
+        }
+        input, select{
+            font-weight: bold;
+            width:50px;
+            height: 30px;
+            outline:0;
+            border:0;
+            border-left: 3px solid $apple-blue;
+            color:$black;
+            
+        }
+        select{
+            width:70px;
+        }
+        p{
+            margin:2px;
+            
+        }
+        ::placeholder{
+            font-weight: lighter;
+            font-size: 10px;
+        }
+        #workNameInput{
+            width: 200px;
+        }
+        
+    }
+}

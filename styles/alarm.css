@@ -43,7 +43,8 @@
   color: white;
   padding: 0.3rem 1rem;
   border-radius: 3px;
-  transition: 1s;
+  transition: 0.3s;
+  border: 1px solid transparent;
   margin: 2px;
 }
 .header .navbar a:hover {

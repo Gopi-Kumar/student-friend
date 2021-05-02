@@ -12,12 +12,12 @@ const services = [
     {
         thumbnail : "pencil.png",
         name : "Notes",
-        href : "alarm.html"
+        href : "notes.html"
     },
     {
         thumbnail : "time-management.png",
         name : "Routine",
-        href : "alarm.htmlne"
+        href : "routine.html"
     },
 
 ]
