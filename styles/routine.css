@@ -161,8 +161,11 @@ body .add_routine input, body .add_routine select {
   height: 30px;
   outline: 0;
   border: 0;
-  border-left: 3px solid #0a84ff;
+  border-left: 3px solid #3a3a3c;
   color: #3a3a3c;
+}
+body .add_routine input {
+  padding: 5px;
 }
 body .add_routine select {
   width: 70px;
