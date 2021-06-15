@@ -1,0 +1,56 @@
+@import './color.scss';
+@import './utills.scss';
+@import './header.scss';
+
+body{
+    button{
+        background:$apple-blue;
+        color:white;
+        border:0;
+        outline:0;
+        font-size: 15px;
+        padding: 10px 20px;
+        border-radius: 5px;
+        font-weight: 400;
+        margin:5px;
+        cursor: pointer;
+        box-shadow: inset 2px 2px 5px $dark-apple-blue;
+        &:hover{
+            background:$dark-apple-blue;
+        }
+    }
+    .notes_container{
+        @include display_as_column;
+        .add_notes{
+            background:$light-gray;
+            @include display_as_row_space_between;
+            padding: 5px 10px;
+            .change_theme{
+                @include display_as_row_center;
+            }
+        }
+        .notes{
+            @include display_as_row_center;
+            flex-wrap: wrap;
+            margin-top: 20px;
+            div{
+                margin:5px;
+                .note{
+                    width:200px;
+                    height:250px;
+                    background:$light-gray;
+                    padding:15px;
+                    border-radius: 5px;
+                    overflow:hidden;
+                    margin:10px;
+                    box-shadow:6px 6px 10px $light-black;
+                    font-size: 10px;
+                    cursor: pointer;
+                }
+                .note_name{
+                    text-align: center;
+                }
+            }
+        }
+    }
+}
