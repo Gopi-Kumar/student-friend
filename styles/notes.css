@@ -111,5 +111,35 @@ body .notes_container .notes div .note {
 body .notes_container .notes div .note_name {
   text-align: center;
 }
+body .notes_container .notes_editing {
+  display: none;
+  height: 100%;
+  position: absolute;
+  background: #f2f2f7;
+  width: 100%;
+}
+body .notes_container .notes_editing .save_and_cancel {
+  border-bottom: 1.2px solid #3a3a3c;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 15px;
+}
+body .notes_container .notes_editing .save_and_cancel input {
+  padding: 5px 10px;
+  border: none;
+  outline: none;
+}
+body .notes_container .notes_editing .save_and_cancel ::placeholder {
+  font-weight: bold;
+}
+body .notes_container .notes_editing textarea {
+  width: 100%;
+  border: none;
+  outline: none;
+  padding: 10px;
+  height: 400px;
+}
 
 /*# sourceMappingURL=notes.css.map */

@@ -52,5 +52,33 @@ body{
                 }
             }
         }
+        .notes_editing{
+            display:none;
+            height:100%;
+            position: absolute;
+            background:$light-gray;
+            width:100%;
+            .save_and_cancel{
+                border-bottom: 1.2px solid $black;
+                @include display_as_row_space_between;
+                padding: 10px 15px;
+                input{
+                    padding:5px 10px;
+                    border:none;
+                    outline:none;
+                }
+                ::placeholder{
+                    font-weight: bold;
+                }
+            }
+            textarea{
+                width:100%;
+                border:none;
+                outline:none;
+                padding:10px;
+                height:400px;
+            }
+        }
     }
+  
 }

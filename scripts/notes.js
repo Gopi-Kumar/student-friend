@@ -28,4 +28,12 @@ function renderNotes(notesItemArray){
 
 renderNotes(notesItem);
 
+const newNoteForm = document.querySelector(".notes_editing");
+
+function addNewNote(){
+    newNoteForm.style.display = "block";
+}
+function closeNotesEditing(){
+    newNoteForm.style.display = "none";
+}
 

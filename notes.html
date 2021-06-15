@@ -20,7 +20,7 @@
     </div>
     <div class="notes_container">
         <section class="add_notes">
-            <button>
+            <button onclick="addNewNote()">
                 Add New Note
             </button>
             <p>Notes</p>
@@ -32,12 +32,13 @@
         <section class="notes">
            
         </section>
-        <section class="editing_notes">
+        <section class="notes_editing">
             <div class="save_and_cancel">
-                <button>Cancel</button>
+                <button onclick="closeNotesEditing()">Cancel</button>
+                <input type="text" id="note_name" placeholder="Enter your note name">
                 <button>Save</button>
             </div>
-            <textarea></textarea>
+            <textarea ></textarea>
         </section>
     </div>
     
