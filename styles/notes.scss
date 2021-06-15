@@ -20,6 +20,7 @@ body{
         }
     }
     .notes_container{
+        cursor: pointer;
         @include display_as_column;
         .add_notes{
             background:$light-gray;
@@ -33,23 +34,41 @@ body{
             @include display_as_row_center;
             flex-wrap: wrap;
             margin-top: 20px;
-            div{
+            .note_container{
+                overflow:hidden;
                 margin:5px;
+                width: 200px;;
+                height:250px;
+                background:$light-gray;
+                border-radius: 7px;
+                box-shadow: 1px 1px 1px $light-black;
+                .title{
+                    font-size: 15px;
+                    padding:5px 10px;
+                    border-bottom: 1px solid $light-black;
+                    @include display_as_row_space_between;
+                    .option{
+                        width:20px;
+                        height:20px;
+                        @include display_as_column_center;
+                        box-shadow: inset 1px 1px 3px $light-black;
+                        cursor:pointer;
+                        border-radius: 2px;
+                        div{
+                            width:2px;
+                            height:2px;
+                            // padding:2px;
+                            margin:1px;
+                            background-color:$black;
+                        }
+                    }
+                }
                 .note{
-                    width:200px;
-                    height:250px;
-                    background:$light-gray;
-                    padding:15px;
-                    border-radius: 5px;
-                    overflow:hidden;
-                    margin:10px;
-                    box-shadow:6px 6px 10px $light-black;
+                    padding:5px 10px;
                     font-size: 10px;
-                    cursor: pointer;
+                    
                 }
-                .note_name{
-                    text-align: center;
-                }
+
             }
         }
         .notes_editing{

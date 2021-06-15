@@ -1,0 +1,83 @@
+[33mcommit ec7021f963aa386b5a46b6db4ea2ad099cc798c4[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m)[m
+Author: Gopi Kumar Kaushik <gopikumarkaushik9065@gmail.com>
+Date:   Tue Jun 15 10:10:04 2021 +0530
+
+    notes editing form added
+
+[33mcommit 233c10e0ead2ddbcd5b8c5faa91772ab5c9d5b9d[m[33m ([m[1;31morigin/master[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: Gopi Kumar Kaushik <gopikumarkaushik9065@gmail.com>
+Date:   Tue Jun 15 06:32:35 2021 +0530
+
+    notes script added
+
+[33mcommit 09e7f6b7ac67ea28bee7ae9adba2ec34825afcd9[m
+Author: Gopi Kumar Kaushik <gopikumarkaushik9065@gmail.com>
+Date:   Tue Jun 15 05:50:53 2021 +0530
+
+    notes added
+
+[33mcommit b8a08513772cbf393e853291b2add898ffc0b6b8[m
+Author: Gopi Kumar Kaushik <gopikumarkaushik9065@gmail.com>
+Date:   Sun May 2 22:25:36 2021 +0530
+
+    map on null bug fixed
+
+[33mcommit 1b40b86bed1b2ae701f1ba705b146d28b1a72c8e[m
+Author: Gopi Kumar Kaushik <gopikumarkaushik9065@gmail.com>
+Date:   Sun May 2 22:15:59 2021 +0530
+
+    conditional formatting added to routine js
+
+[33mcommit bbcd3aeb6f07e67eacd02420b3125d7211a0c136[m
+Author: Gopi Kumar Kaushik <gopikumarkaushik9065@gmail.com>
+Date:   Sun May 2 21:16:24 2021 +0530
+
+    routine added
+
+[33mcommit 1856ad093949beac7130b5f053428e080679517f[m
+Author: Gopi Kumar Kaushik <gopikumarkaushik9065@gmail.com>
+Date:   Sun May 2 03:38:52 2021 +0530
+
+    configured with local storage
+
+[33mcommit c39bef9d7dbad5be5535c071b62bd666b50cdb31[m
+Author: Gopi Kumar Kaushik <gopikumarkaushik9065@gmail.com>
+Date:   Sun May 2 03:34:37 2021 +0530
+
+    cofigured with local storage
+
+[33mcommit 6b6e356777095806c6bae1df811f4d4f09ef91e4[m
+Author: Gopi Kumar Kaushik <gopikumarkaushik9065@gmail.com>
+Date:   Sat May 1 14:15:08 2021 +0530
+
+    todo completed
+
+[33mcommit ab61fc8864118e9f4acdfe5cd16c910299498acb[m
+Author: Gopi Kumar Kaushik <gopikumarkaushik9065@gmail.com>
+Date:   Sat May 1 14:01:28 2021 +0530
+
+    initial todo created
+
+[33mcommit 23cf151c88a333498851c69dd89f6c79fa3afaa5[m
+Author: Gopi Kumar Kaushik <gopikumarkaushik9065@gmail.com>
+Date:   Fri Apr 30 14:32:54 2021 +0530
+
+    image added
+
+[33mcommit edc1e0e1d369d05cf95f699722558afd9d6317b2[m
+Author: Gopi Kumar Kaushik <gopikumarkaushik9065@gmail.com>
+Date:   Fri Apr 30 14:32:16 2021 +0530
+
+    alarm header added
+
+[33mcommit 214e607ebeaa1f41336c1a2a876b25b319ee2e3e[m
+Author: Gopi Kumar Kaushik <gopikumarkaushik9065@gmail.com>
+Date:   Fri Apr 30 00:15:04 2021 +0530
+
+    alarm added
+
+[33mcommit 185bc31045eac221b848e927ec44242a755950d8[m
+Author: Gopi Kumar Kaushik <gopikumarkaushik9065@gmail.com>
+Date:   Thu Apr 29 20:30:09 2021 +0530
+
+    intial commit
