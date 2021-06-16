@@ -51,6 +51,8 @@ const newNoteForm = document.querySelector(".notes_editing");
 const options = document.querySelector(".options");
 const option = document.querySelector(".option");
 
+let noteTextArea = document.querySelector("textarea");
+let noteNameInput = document.querySelector("#note_name");
 
 function addNewNote(){
     newNoteForm.style.display = "block";
@@ -94,12 +96,10 @@ function showOptions(ele){
 }
 
 function closeOptions(){
-    document.querySelector(`#${currentNoteId} .title .options`).style.display = "none"
+    document.querySelector(`#${currentNoteId} .title .options`).style.display = "none";
+    optionsOpened = false;
 }
 
-function editNote(){
-
-}
 
 function deleteNote(){
     optionsOpened = false;
@@ -114,5 +114,32 @@ function deleteNote(){
     notesItem = getNotesFromLocalStorage();
     notesContainer.innerHTML = "";
     renderNotes(notesItem);
-    console.log("")
 }
+
+function editNote(){
+    newNoteForm.style.display = "block";
+    let cancelButton = document.querySelectorAll(".save_and_cancel button")[0];
+    cancelButton.innerHTML = "Delete";
+    cancelButton.style.backgroundColor = "red";
+    cancelButton.addEventListener("click", ()=>{
+        deleteNote();
+    })
+    notesItem.map(note => {
+        if(note.id == currentNoteId){
+            noteTextArea.value = note.note;
+            noteNameInput.value= note.name;
+        }
+    })
+    
+    deleteNote();
+    
+    if(optionsOpened){
+        closeOptions();
+    }
+}
+
+// window.addEventListener("click", ()=>{
+//     if(optionsOpened){
+//         closeOptions();
+//     }
+// })

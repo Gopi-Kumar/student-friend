@@ -4,10 +4,6 @@ alarm item width 50vw
 
 add label to alarm
 
-add todo input below todo 
-
-clear todo input field after add todo 
-
 on press enter todo shoud added and alarm also
 
 add checklist infront of todo items
@@ -19,5 +15,7 @@ add edit and open option on each note
 add clear routine button 
 
 add theme changer button in notes
+
+clear textarea and note name input field after each entry
 
 

@@ -62,7 +62,7 @@ body button {
   font-weight: 400;
   margin: 5px;
   cursor: pointer;
-  box-shadow: inset 2px 2px 5px #004d99;
+  box-shadow: inset 2px 2px 5px #5f5f5f;
 }
 body button:hover {
   background: #004d99;
