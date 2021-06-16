@@ -130,7 +130,7 @@ body{
         width: 100%;
         @include display_as_column_center;
         .alarm__item{
-            border-bottom:3px solid $light-black;
+            border-bottom:1px solid $light-black;
             width: 100%;
             font-size: 40px;
             font-weight: 300;
