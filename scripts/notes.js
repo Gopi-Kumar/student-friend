@@ -54,6 +54,11 @@ const option = document.querySelector(".option");
 let noteTextArea = document.querySelector("textarea");
 let noteNameInput = document.querySelector("#note_name");
 
+function clearInputField(){
+    noteTextArea.value = "Write your note here..";
+    noteNameInput.value = "";
+}
+
 function addNewNote(){
     newNoteForm.style.display = "block";
 }
@@ -78,9 +83,8 @@ function saveNote(){
     saveNotesToLocalStorage();
     notesItem = getNotesFromLocalStorage();
     notesContainer.innerHTML = "";
+    clearInputField();
     renderNotes(notesItem);
-    noteText = "Write your note here...";
-    note_name = "";
     closeNotesEditing();
 }
 
