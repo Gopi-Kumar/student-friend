@@ -29,16 +29,17 @@ function renderAlarmData(){
         return;
     }
     alarmData.map(alarm => {
-        renderAlarms(alarm.id, alarm.hr, alarm.min, alarm.meridium);
+        renderAlarms(alarm.id, alarm.hr, alarm.min, alarm.meridium,alarm.label);
     })
 }
  
 
 //rendering alarm from alarmdata
-function renderAlarms(id, hr, min, meridiem) {
+function renderAlarms(id, hr, min, meridiem,label) {
     const alarmItem = document.createElement('div');
     alarmItem.setAttribute("class", "alarm__item");
     const htmlForAlarm = `
+                            <section>
                             <div class="timer">
                                 <div class="square">
                                     <div class="digits" id="chr">${hr}</div>
@@ -51,6 +52,8 @@ function renderAlarms(id, hr, min, meridiem) {
                                     <div class="digits" id="meridiem">${meridiem}</div>
                                 </div>
                             </div>
+                            <p>${label}</p>
+                            </section>
                             <div onClick=deleteAlarm(this.id) class="delete__alarm" id="${id}">
                                 X
                             </div>
@@ -68,13 +71,15 @@ function closeAlarm(){
 }
 
 //start alarm
-function startAlarm(hr,min,meri){
+function startAlarm(hr,min,meri,label){
     showOverlay();
     alarmTone.play();
     document.querySelector(".time #hr").innerText = hr;
     document.querySelector(".time #min").innerText = min;
     document.querySelector(".time #mer").innerText = meri;
+    document.querySelector(".alarm_started p").innerText = label;
     alarmStarted.style.display = "flex";
+
 }
 //delete__alarm
 function deleteAlarm(id){
@@ -98,10 +103,10 @@ function closeForm() {
 
 //this function after alarm form summited
 function addAlarm() {
-    console.log("alarm added");
     let alarmHr = document.querySelector(".input__field #hr").value;
     let alarmMin = document.querySelector(".input__field #min").value;
     let alarmMeridium = document.querySelector("select").value.toUpperCase();
+    let alarmLabel = document.querySelector("#alarm_label").value;
     if(alarmHr && alarmMin && alarmMeridium && alarmMin.length < 3){
         if(alarmHr <= 12 && alarmHr != 0 && alarmMin <60  && alarmMeridium){
             if(alarmHr < 10)
@@ -116,7 +121,8 @@ function addAlarm() {
                 id : AlarmId,
                 hr : alarmHr,
                 min: alarmMin,
-                meridium : alarmMeridium
+                meridium : alarmMeridium,
+                label: alarmLabel
             }
             if(alarmData == null){
                 alarmData = [];
@@ -169,7 +175,7 @@ function updateClock() {
     //alarm functionallity
     alarmData.map(alarm => {
         if(alarm.hr == hr && alarm.min == min && alarm.meridium == meri && sec == 1){
-           startAlarm(hr, min, meri);
+           startAlarm(hr, min, meri, alarm.label);
         }
     })
 

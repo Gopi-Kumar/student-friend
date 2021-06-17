@@ -143,6 +143,13 @@ body .add__alarm__form .form .time__setter .select__field select {
 body .add__alarm__form .form .time__setter .select__field option {
   color: #3a3a3c;
 }
+body .add__alarm__form .form .alarm_label input {
+  border: none;
+  outline: none;
+  font-size: 12px;
+  padding: 3px 5px;
+  font-weight: bold;
+}
 body .add__alarm__form .form .confirm button {
   padding: 0.5rem 1rem;
   border: none;
@@ -166,6 +173,14 @@ body .alarm_started {
   color: white;
   font-size: 20px;
   display: none;
+}
+body .alarm_started p {
+  font-weight: bold;
+  padding: 5px 10px;
+  border: 2px solid white;
+  font-size: 15px;
+  margin: 5px;
+  color: black;
 }
 body .alarm_started button {
   border: 0;
@@ -222,6 +237,10 @@ body .alarms .alarm__item .timer .square #meridiem {
   font-size: 20px;
   font-weight: 500;
   margin: 5px;
+}
+body .alarms .alarm__item p {
+  font-size: 15px;
+  text-align: center;
 }
 body .alarms .alarm__item .delete__alarm {
   display: flex;

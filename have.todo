@@ -1,4 +1,4 @@
-delete alarm bug
+
 
 alarm item width 50vw
 
@@ -10,12 +10,13 @@ add checklist infront of todo items
 
 integrate routine with alarms
 
-add edit and open option on each note
 
 add clear routine button 
 
 add theme changer button in notes
 
 clear textarea and note name input field after each entry
+
+after check in todo item they should appear at last with light color
 
 
