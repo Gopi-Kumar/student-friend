@@ -5,12 +5,22 @@
 body{
     background:$light-gray;
     @include display_as_column_center;
+    #delete_routine{
+        background-color: red;
+        outline:none;
+        border:none;
+        padding:10px;
+        border-radius: 5px;
+        color:$black;
+        font-size: 10px;
+    }
     .routine_header{
         margin-top: 20px;
         background:$white;
         @include display_as_row_center;
         border-top: 2px solid $apple-blue;
         border-right: 2px solid $apple-blue;
+      
 
         .time_section{
             width: 400px;

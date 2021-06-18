@@ -58,6 +58,15 @@ body {
   justify-content: center;
   align-items: center;
 }
+body #delete_routine {
+  background-color: red;
+  outline: none;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  color: #3a3a3c;
+  font-size: 10px;
+}
 body .routine_header {
   margin-top: 20px;
   background: white;
