@@ -4,9 +4,11 @@
 
 body{
     .webpages_container{
+        
         position:relative;
         .webpages{
             @include display_as_row_center;
+            flex-wrap: wrap;
             padding:3rem 2rem;
             .webpage{
                 @include display_as_column_center;
@@ -15,7 +17,7 @@ body{
                 border-radius: 5px;
                 box-shadow: 1px 1px 10px $gray;
 
-                a{
+                a,section{
                     background-color:$white;
                     border-radius: 50%;
                     width:80px;
@@ -26,13 +28,81 @@ body{
                     text-decoration: none;
                     font-size: 12px;
                 }
+              
+            }
+            #addButton{
+                background:$white;
+                cursor: pointer;
+                font-weight: bold;
+                section{
+                    border:2px solid $light-black;
+                    @include display_as_column_center;
+                    button{
+                        border: 0;
+                        outline: 0;
+                        background: transparent;
+
+                        
+                    }
+                    &:hover{
+                        button{
+                            color:$white;
+                        }
+                        background:$light-black;
+                        color:$white;
+                    }
+                }
             }
         }
+
         .webpage_editing{
+            display:none; 
+            z-index: 22;
             position: absolute;
-            top:50%;
-            left:35%;sass            
+            width: 300px;
+            height: 150px;
+            background:$light-gray;
+            left:calc(50vw - 150px);
+            top:calc(50vh - 200px);
+            padding:1rem;
+            border:6px solid $black;
+            box-shadow: 40px 40px 500px black, -40px -40px 500px black;
+            input,button{
+                border:0;
+                outline:0;
+                font-size: 15px;
+                margin:5px;
+                padding: 5px 10px;
+            }
+            input{
+                width:260px;
+            }
+            button{
+                // border: 2px solid $black;
+                background:$apple-blue;
+                border-radius: 5px;
+                cursor: pointer;
+                color:$white;
+            }
+            .save_and_cancel{
+                @include display_as_row_space_between;
+            }
+            ::placeholder{
+                font-size: 10px;
+            }
         }
+        // .webpage_editing::after{
+        //     top:0;
+        //     left:0;
+        //     position: absolute;
+        //     content:"";
+        //     background:red;
+        //     width:400px;
+        //     height: 300px;
+            
+           
+        // }
+   
     }
 }
 

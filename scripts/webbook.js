@@ -1,4 +1,3 @@
-console.log("Hello")
 let webPages = getWebPagesFromLocalStorage();
 
 function saveWebPagesToLocalStorage(){
@@ -13,40 +12,68 @@ function getRandomId(){
     return `id_${Math.floor(Math.random() * 10000000)}`;
 }
 
+function rcc(){
+    return Math.ceil(Math.random() * 255);
+}
+
+function renderAddButton(){
+    const addButton = document.createElement("div");
+    addButton.classList.add("webpage")
+    addButton.setAttribute("id", "addButton");
+    addButton.addEventListener("click", ()=>{
+        addNewWebPage();
+    })
+    const html = `
+        <section>
+        <button>+</button>
+        <p>Add New Url</p>
+        </section>
+    `
+    addButton.innerHTML = html;
+    webPagesContainer.appendChild(addButton);
+}
+
 const webPagesContainer = document.querySelector(".webpages");
 function renderWebPages(webPagesArray){
     if(webPagesArray == null || webPagesArray.length == 0){
+        renderAddButton();
         return;
     }
 
     webPagesContainer.innerHtml = "";
     webPagesArray.map(item => {
         const itemContainer = document.createElement("div");
-        itemContainer.classList.add("webpage")
+        itemContainer.classList.add("webpage");
+        itemContainer.style.backgroundColor = `rgb(${rcc()}, ${rcc()}, ${rcc()})`
         itemContainer.setAttribute("id", `${item.id}`);
         itemContainer.setAttribute("title", "Click to open")
         const html = `
             <a href="${item.href}"><p>${item.name}</p></a>
         `
         itemContainer.innerHTML = html;
-        console.log(itemContainer)
         webPagesContainer.appendChild(itemContainer);
 
     })
+    renderAddButton();
+    
+
 }
 
 renderWebPages(webPages);
 
-const newWebPageForm = document.querySelector(".notes_editing");
-const options = document.querySelector(".options");
-const option = document.querySelector(".option");
 
-let noteTextArea = document.querySelector("textarea");
-let noteNameInput = document.querySelector("#note_name");
+
+
+
+const newWebPageForm = document.querySelector(".webpage_editing");
+
+
+let webPageNameArea = document.querySelector("#webPageName");
+let webPageUrl = document.querySelector("#webPageUrl");
 
 function clearInputField(){
-    noteTextArea.value = "Write your note here..";
-    noteNameInput.value = "";
+    webPageNameArea.value = "";
+    webPageUrl.value = "";
 }
 
 function addNewWebPage(){
@@ -77,58 +104,4 @@ function saveWebPage(){
     renderWebPages(webPages);
     closeWebPageEditing();
 }
-
-// let currentNoteId, optionsOpened = false;
-
-// function showOptions(ele){
-//     if(optionsOpened){
-//         closeOptions(); 
-//     }
-//     optionsOpened = true;
-//     currentNoteId = ele.parentNode.parentNode.id;
-//     document.querySelector(`#${currentNoteId} .title .options`).style.display = "flex"
-// }
-
-// function closeOptions(){
-//     document.querySelector(`#${currentNoteId} .title .options`).style.display = "none";
-//     optionsOpened = false;
-// }
-
-
-// function deleteNote(){
-//     optionsOpened = false;
-//     let newNotesData = [];
-//     webPages.map(note => {
-//         if(note.id != currentNoteId){
-//             newNotesData.push(note);
-//         }
-//     })
-//     webPages = newNotesData;
-//     saveWebPagesToLocalStorage();
-//     webPages = getWebPagesFromLocalStorage();
-//     webPagesContainer.innerHTML = "";
-//     renderWebPages(webPages);
-// }
-
-// function editNote(){
-//     newWebPageForm.style.display = "block";
-//     let cancelButton = document.querySelectorAll(".save_and_cancel button")[0];
-//     cancelButton.innerHTML = "Delete";
-//     cancelButton.style.backgroundColor = "red";
-//     cancelButton.addEventListener("click", ()=>{
-//         deleteNote();
-//     })
-//     webPages.map(note => {
-//         if(note.id == currentNoteId){
-//             noteTextArea.value = note.note;
-//             noteNameInput.value= note.name;
-//         }
-//     })
-    
-//     deleteNote();
-    
-//     if(optionsOpened){
-//         closeOptions();
-//     }
-// }
 

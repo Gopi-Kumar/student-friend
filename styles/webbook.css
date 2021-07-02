@@ -1,17 +1,152 @@
-/* Error: expected "{".
- *    ,
- * 34 |             left:35%;sass            
- *    |                                      ^
- *    '
- *   styles\webbook.scss 34:38  root stylesheet */
-
-body::before {
-  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
-      "Droid Sans Mono", monospace, monospace;
-  white-space: pre;
-  display: block;
-  padding: 1em;
-  margin-bottom: 1em;
-  border-bottom: 2px solid black;
-  content: 'Error: expected "{".\a    \2577 \a 34 \2502              left:35%;sass            \d\a    \2502                                       ^\a    \2575 \a   styles\\webbook.scss 34:38  root stylesheet';
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap");
+@import "./color.css";
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Roboto;
 }
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 1px gray;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #3a3a3c;
+  border-radius: 10px;
+}
+
+.header {
+  width: 100%;
+  background: #3a3a3c;
+  color: white;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  flex-wrap: wrap;
+}
+.header .logo {
+  font-size: 35px;
+  padding: 1rem;
+}
+.header .navbar a {
+  text-decoration: none;
+  color: white;
+  padding: 0.3rem 1rem;
+  border-radius: 3px;
+  transition: 0.3s;
+  border: 1px solid transparent;
+  margin: 2px;
+}
+.header .navbar a:hover {
+  background: #2c2c2c;
+  border: 1px solid #525252;
+}
+
+body .webpages_container {
+  position: relative;
+}
+body .webpages_container .webpages {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 3rem 2rem;
+}
+body .webpages_container .webpages .webpage {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #0a84ff;
+  margin: 10px;
+  border-radius: 5px;
+  box-shadow: 1px 1px 10px gray;
+}
+body .webpages_container .webpages .webpage a, body .webpages_container .webpages .webpage section {
+  background-color: white;
+  border-radius: 50%;
+  width: 80px;
+  height: 80px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin: 15px;
+  color: #3a3a3c;
+  text-decoration: none;
+  font-size: 12px;
+}
+body .webpages_container .webpages #addButton {
+  background: white;
+  cursor: pointer;
+  font-weight: bold;
+}
+body .webpages_container .webpages #addButton section {
+  border: 2px solid #5f5f5f;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+body .webpages_container .webpages #addButton section button {
+  border: 0;
+  outline: 0;
+  background: transparent;
+}
+body .webpages_container .webpages #addButton section:hover {
+  background: #5f5f5f;
+  color: white;
+}
+body .webpages_container .webpages #addButton section:hover button {
+  color: white;
+}
+body .webpages_container .webpage_editing {
+  display: none;
+  z-index: 22;
+  position: absolute;
+  width: 300px;
+  height: 150px;
+  background: #f2f2f7;
+  left: calc(50vw - 150px);
+  top: calc(50vh - 200px);
+  padding: 1rem;
+  border: 6px solid #3a3a3c;
+  box-shadow: 40px 40px 500px black, -40px -40px 500px black;
+}
+body .webpages_container .webpage_editing input, body .webpages_container .webpage_editing button {
+  border: 0;
+  outline: 0;
+  font-size: 15px;
+  margin: 5px;
+  padding: 5px 10px;
+}
+body .webpages_container .webpage_editing input {
+  width: 260px;
+}
+body .webpages_container .webpage_editing button {
+  background: #0a84ff;
+  border-radius: 5px;
+  cursor: pointer;
+  color: white;
+}
+body .webpages_container .webpage_editing .save_and_cancel {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+body .webpages_container .webpage_editing ::placeholder {
+  font-size: 10px;
+}
+
+/*# sourceMappingURL=webbook.css.map */
