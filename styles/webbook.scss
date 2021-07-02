@@ -1,0 +1,38 @@
+@import './color.scss';
+@import './utills.scss';
+@import './header.scss';
+
+body{
+    .webpages_container{
+        position:relative;
+        .webpages{
+            @include display_as_row_center;
+            padding:3rem 2rem;
+            .webpage{
+                @include display_as_column_center;
+                background-color:$apple-blue;
+                margin:10px;
+                border-radius: 5px;
+                box-shadow: 1px 1px 10px $gray;
+
+                a{
+                    background-color:$white;
+                    border-radius: 50%;
+                    width:80px;
+                    height:80px;
+                    @include display_as_row_center;
+                    margin:15px;
+                    color:$black;
+                    text-decoration: none;
+                    font-size: 12px;
+                }
+            }
+        }
+        .webpage_editing{
+            position: absolute;
+            top:50%;
+            left:35%;sass            
+        }
+    }
+}
+

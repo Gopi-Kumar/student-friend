@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SF :: Web Book</title>
+    <link rel="stylesheet" href="./styles/webbook.css">
+    <script src="./scripts/webbook.js" defer></script>
+</head>
+<body>
+    <div class="header">
+        <p class="logo">Students Friend</p>
+        <div class="navbar">
+            <a href="index.html" id="backToHome">Back to home</a>
+            <a href="alarm.html">Alarm</a>
+            <a href="todo.html">Todo</a>
+            <a href="notes.html">Notes</a>  
+            <a href="routine.html">Routine</a>
+        </div>
+    </div>
+    <div class="webpages_container">
+        <section class="webpages">
+           
+        </section>
+        <section class="webpage_editing">
+            <div class="name_and_url">
+                <input type="text" id="webpageName" placeholder="Name">
+                <input type="text" id="webPageUrl" placeholder="Url">
+            </div>
+            <div class="save_and_cancel">
+                <button onclick="saveWebPage()">Save</button>
+                <button onclick="closeWebPageEditing()">Cancel</button>
+            </div>
+        </section>
+    </div>
+  </body>
+</html>
