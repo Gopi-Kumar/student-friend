@@ -24,7 +24,7 @@ function renderAddButton(){
         addNewWebPage();
     })
     const html = `
-        <section>
+        <section title="Add new Webpage">
         <button>+</button>
         <p>Add New Url</p>
         </section>
@@ -48,7 +48,8 @@ function renderWebPages(webPagesArray){
         itemContainer.setAttribute("id", `${item.id}`);
         itemContainer.setAttribute("title", "Click to open")
         const html = `
-            <a href="${item.href}"><p>${item.name}</p></a>
+            <i id="deleteWebPage" title="Delete this webpage" class="fas fa-trash"></i>
+            <a href="${item.href}" target="blank"><p>${item.name}</p></a>
         `
         itemContainer.innerHTML = html;
         webPagesContainer.appendChild(itemContainer);
@@ -105,3 +106,16 @@ function saveWebPage(){
     closeWebPageEditing();
 }
 
+function saveWebPageOnEnterPress(e){
+    if(e.key === "Enter"){
+        saveWebPage();
+        return;
+    }
+}
+document.querySelector("#webPageUrl").addEventListener("keypress", (e)=>{
+   saveWebPageOnEnterPress(e);
+})
+document.querySelector("#webPageName").addEventListener("keypress", (e)=>{
+    saveWebPageOnEnterPress(e);
+ })
+ 

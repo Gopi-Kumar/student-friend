@@ -63,6 +63,7 @@ body .webpages_container .webpages {
   padding: 3rem 2rem;
 }
 body .webpages_container .webpages .webpage {
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -71,6 +72,24 @@ body .webpages_container .webpages .webpage {
   margin: 10px;
   border-radius: 5px;
   box-shadow: 1px 1px 10px gray;
+}
+body .webpages_container .webpages .webpage:hover i {
+  display: block;
+}
+body .webpages_container .webpages .webpage i {
+  display: none;
+  font-style: normal;
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 5px 10px;
+  cursor: pointer;
+  border-radius: 50%;
+  color: white;
+}
+body .webpages_container .webpages .webpage i:hover {
+  background: #3a3a3c;
+  color: red;
 }
 body .webpages_container .webpages .webpage a, body .webpages_container .webpages .webpage section {
   background-color: white;
@@ -84,7 +103,11 @@ body .webpages_container .webpages .webpage a, body .webpages_container .webpage
   margin: 15px;
   color: #3a3a3c;
   text-decoration: none;
-  font-size: 12px;
+  font-size: 13px;
+  font-weight: bold;
+}
+body .webpages_container .webpages .webpage a p, body .webpages_container .webpages .webpage section p {
+  text-align: center;
 }
 body .webpages_container .webpages #addButton {
   background: white;
@@ -131,7 +154,7 @@ body .webpages_container .webpage_editing input, body .webpages_container .webpa
   padding: 5px 10px;
 }
 body .webpages_container .webpage_editing input {
-  width: 260px;
+  width: 245px;
 }
 body .webpages_container .webpage_editing button {
   background: #0a84ff;
@@ -146,7 +169,7 @@ body .webpages_container .webpage_editing .save_and_cancel {
   align-items: center;
 }
 body .webpages_container .webpage_editing ::placeholder {
-  font-size: 10px;
+  font-size: 12px;
 }
 
 /*# sourceMappingURL=webbook.css.map */
