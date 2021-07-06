@@ -32,8 +32,9 @@ function renderTodo(){
         const todoItem = document.createElement("div");
         todoItem.classList.add("todo_item");
         const html = `
+            <input type="checkbox" id=${todoitem.id} onchange=deleteTodo(this.id)>
             <p>${todoitem.todo}</p>
-            <button id=${todoitem.id} onclick=deleteTodo(this.id)>X</button>`
+            `
         todoItem.innerHTML = html;
         todosContainer.appendChild(todoItem);
     })
@@ -47,8 +48,6 @@ function renderTodo(){
     todosContainer.appendChild(addTodo)
 }
 renderTodo();
-
-
 
 
 
@@ -69,16 +68,19 @@ function addTodo(){
 }
 
 function deleteTodo(id){
-    let newTodoData = [];
-    todos.map((todo)=>{
-        if(todo.id != id){
-            newTodoData.push(todo);
-        }
-    });
-    todos = newTodoData;
-    saveTodoToLocalStorage();
-    todos = getTodoFromLocalStorage();
-    renderTodo();
+    setTimeout(() => {
+        let newTodoData = [];
+        todos.map((todo)=>{
+            if(todo.id != id){
+                newTodoData.push(todo);
+            }
+        });
+        todos = newTodoData;
+        saveTodoToLocalStorage();
+        todos = getTodoFromLocalStorage();
+        renderTodo();
+    }, 200);
+    
 }
 
 const todoInput = document.querySelector(".add_todo #new_todo_input")

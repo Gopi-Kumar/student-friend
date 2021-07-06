@@ -30,7 +30,7 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem;
+  padding: 0.3rem 1rem;
   flex-wrap: wrap;
 }
 .header .logo {
@@ -73,20 +73,18 @@ body .todos {
 body .todos .todo_item {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
   align-items: center;
   width: 300px;
   padding: 5px 0px;
   font-size: 15px;
 }
-body .todos .todo_item button {
+body .todos .todo_item p {
+  padding-left: 5px;
+}
+body .todos .todo_item input {
   cursor: pointer;
-  background: #0a84ff;
-  border: none;
-  outline: none;
-  padding: 0.3em 0.5rem;
-  border-radius: 50%;
-  color: white;
+  width: 20px;
+  height: 20px;
 }
 body .add_todo input {
   width: 240px;

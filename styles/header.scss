@@ -3,7 +3,7 @@
     background:$black;
     color:$white;
     @include display_as_row_space_between;
-    padding:1rem;
+    padding:0.3rem 1rem;
     flex-wrap: wrap;
     .logo{
         font-size: 35px;

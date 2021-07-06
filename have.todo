@@ -2,11 +2,10 @@ alarm item width 50vw
 
 AM PM bug in alarm
 
-add checklist infront of todo items
 
 integrate routine with alarms
 
-add theme changer button in notes
+theme change function in notes
 
 after check in todo item they should appear at last with light color
 
@@ -14,11 +13,19 @@ close menu option in notes
 
 after click on note item note should be appear bigger then they are  
 
-add web book
 
 text align center in webbook circle
 
 notification box in student friend
+
+sync with database
+
+add login logout system
+ 
+
+add "nothing to show" in notes 
+
+add favicon for all web pages
 
 
 

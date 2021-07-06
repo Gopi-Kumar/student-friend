@@ -1,4 +1,5 @@
-let webPages = getWebPagesFromLocalStorage();
+let webPages;
+webPages = getWebPagesFromLocalStorage();
 
 function saveWebPagesToLocalStorage(){
     localStorage.setItem("webpage", JSON.stringify(webPages));
@@ -48,7 +49,9 @@ function renderWebPages(webPagesArray){
         itemContainer.setAttribute("id", `${item.id}`);
         itemContainer.setAttribute("title", "Click to open")
         const html = `
-            <i id="deleteWebPage" title="Delete this webpage" class="fas fa-trash"></i>
+            <i onclick="deleteWebPage(this)" title="Delete this webpage" >
+                x
+            </i>
             <a href="${item.href}" target="blank"><p>${item.name}</p></a>
         `
         itemContainer.innerHTML = html;
@@ -112,6 +115,30 @@ function saveWebPageOnEnterPress(e){
         return;
     }
 }
+
+// function deleteWebPage(arg){
+//     let id = arg.parentNode.id;
+//     let webpages = getWebPagesFromLocalStorage();
+//     webPages = webpages.filter(wp => wp.id != id);
+//     console.log(webPages)
+//     saveWebPagesToLocalStorage();
+//     renderWebPages(webPages);
+
+// }
+function deleteWebPage(arg){
+    const id = arg.parentNode.id;
+    let newWebpages = [];
+    webPages.map((wp)=>{
+        if(wp.id != id){
+            newWebpages.push(wp);
+        }
+    });
+    webPages = newWebpages;
+    saveWebPagesToLocalStorage();
+    webPages = getWebPagesFromLocalStorage();
+    renderWebPages(webPages);
+}
+
 document.querySelector("#webPageUrl").addEventListener("keypress", (e)=>{
    saveWebPageOnEnterPress(e);
 })

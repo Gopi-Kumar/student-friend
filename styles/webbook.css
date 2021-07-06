@@ -30,7 +30,7 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem;
+  padding: 0.3rem 1rem;
   flex-wrap: wrap;
 }
 .header .logo {
