@@ -16,8 +16,8 @@
         <p class="about">A students friend who helps students to manage his routine and much more thing so student can focus on study.</p>
        </section>
        <section>
-           <button id="login">Log In</button>
-           <button id="newuser">Create New Account</button>
+           <button id="login" onclick="showLoginForm()">Log In</button>
+           <button id="newuser" onclick="showCreateNewUserForm()">Create New Account</button>
             <a href="https://gkkaushik.netlify.com" target="_blank"> About Developer</a>          
        </section>
     </div>
@@ -25,8 +25,8 @@
         <div class="services">
         </div>
     </div>
-    <div id="login-form">
-
+    <div id="login-form" style="display: none" >
+        <button id="closeForm" onclick="closeLoginForm()">X</button>
         <form method="POST">
             <p>Message</p>
            <section id="username-input">
@@ -42,8 +42,8 @@
           </section>
         </form>
     </div>
-    <div id="new-user-form">
-
+    <div id="new-user-form" style="display: none">
+    <button id="closeForm" onclick="closeCreateNewUserForm()">X</button>
         <form method="POST">
             <p>Message</p>
            <section id="username-input">

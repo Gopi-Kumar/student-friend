@@ -97,6 +97,7 @@ body .app .services .service a {
   text-decoration: none;
   border-radius: 5px;
 }
+body #login-form,
 body #new-user-form {
   width: 400px;
   height: 250px;
@@ -111,17 +112,31 @@ body #new-user-form {
   justify-content: center;
   align-items: center;
 }
+body #login-form #closeForm,
+body #new-user-form #closeForm {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  padding: 5px;
+  border-radius: 10px;
+  outline: none;
+  border: none;
+  cursor: pointer;
+}
+body #login-form p,
 body #new-user-form p {
   text-align: center;
   font-size: 12px;
   color: red;
   display: none;
 }
+body #login-form section,
 body #new-user-form section {
   display: flex;
   flex-direction: column;
   margin: 5px;
 }
+body #login-form section input,
 body #new-user-form section input {
   background: #f2f2f7;
   border: 0;
@@ -130,10 +145,12 @@ body #new-user-form section input {
   width: 250px;
   height: 30px;
 }
+body #login-form section label,
 body #new-user-form section label {
   font-size: 15px;
   margin: 2px;
 }
+body #login-form #submit-button,
 body #new-user-form #submit-button {
   background: #0a84ff;
   outline: None;

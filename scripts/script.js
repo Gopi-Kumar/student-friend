@@ -41,3 +41,29 @@ services.forEach(service => {
 })
 
 
+
+
+let loginForm = document.querySelector("#login-form");
+let newUserFrom = document.querySelector("#new-user-form");
+function showLoginForm(){
+    loginForm.style.display = "flex";
+}
+function showCreateNewUserForm(){
+    newUserFrom.style.display = "flex";
+}
+function closeLoginForm(){
+    loginForm.style.display = "none";
+}
+function closeCreateNewUserForm(){
+    newUserFrom.style.display = "none";
+}
+
+//login
+
+let userLoggedIn = false;
+
+//create new user
+
+//upload
+
+
