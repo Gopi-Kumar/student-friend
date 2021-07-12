@@ -45,11 +45,20 @@ body .home_header a {
   background: white;
   color: #3a3a3c;
   text-decoration: none;
-  padding: 0.2rem 1rem;
+  padding: 5px 10px;
   border-radius: 5px;
+  font-size: 13px;
 }
 body .home_header section {
   margin: 5px;
+}
+body .home_header #login, body .home_header #newuser {
+  background: #0a84ff;
+  outline: None;
+  border: None;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
 }
 body .app {
   width: 100%;
@@ -87,7 +96,52 @@ body .app .services .service a {
   margin: 0.5rem;
   text-decoration: none;
   border-radius: 5px;
+}
+body #new-user-form {
+  width: 400px;
+  height: 250px;
+  background: white;
+  position: absolute;
+  top: calc(50vh - 125px);
+  left: calc(50vw - 200px);
+  box-shadow: 5px 5px 10px gray;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+body #new-user-form p {
+  text-align: center;
+  font-size: 12px;
+  color: red;
+  display: none;
+}
+body #new-user-form section {
+  display: flex;
+  flex-direction: column;
+  margin: 5px;
+}
+body #new-user-form section input {
+  background: #f2f2f7;
+  border: 0;
+  outline: 0;
+  border-bottom: 1px solid #3a3a3c;
+  width: 250px;
+  height: 30px;
+}
+body #new-user-form section label {
   font-size: 15px;
+  margin: 2px;
+}
+body #new-user-form #submit-button {
+  background: #0a84ff;
+  outline: None;
+  border: None;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  text-align: center;
 }
 
 /*# sourceMappingURL=style.css.map */

@@ -19,11 +19,20 @@ body{
             background: $white;
             color:$black;
             text-decoration: none;
-            padding:0.2rem 1rem;
+            padding:5px 10px;
             border-radius: 5px;
+            font-size: 13px;
         }
         section{
             margin:5px;
+        }
+        #login, #newuser{
+            background :$apple-blue;
+            outline:None;
+            border:None;
+            padding:5px 10px;
+            border-radius: 5px;
+            cursor: pointer;
         }
     }
     .app{
@@ -57,11 +66,55 @@ body{
                     margin:0.5rem;
                     text-decoration: none;
                     border-radius: 5px;
-                    font-size: 15px;
                 }
                
                 
             }
+        }
+    }
+
+    // #login-form{
+    #new-user-form{
+        width: 400px;
+        height: 250px;
+        background:$white;
+        position:absolute;
+        top:calc(50vh - 125px);
+        left:calc(50vw - 200px);
+        box-shadow: 5px 5px 10px  $gray;
+        border-radius: 10px;
+        p{
+            text-align: center;
+            font-size: 12px;
+            color:red;
+            display:none;
+        }
+        @include display_as_column_center;
+        section{
+            @include display_as_column;
+            margin:5px;
+            input{
+                background:$light-gray;
+                border:0;
+                outline:0;
+                border-bottom: 1px solid $black;
+                width:250px;
+                height:30px;
+            }
+            label{
+                font-size: 15px;
+                margin:2px;
+                
+            }
+        }
+        #submit-button{
+            background :$apple-blue;
+            outline:None;
+            border:None;
+            padding:5px 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            text-align: center;
         }
     }
 }
