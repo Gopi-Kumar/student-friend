@@ -1,14 +1,4 @@
-const showNotification = (message, color) => {
-    document.querySelector(".notifications").innerHTML = "";
-    let div = document.createElement("div");
-    div.classList.add("notification");
-    // div.style.backgroundColor = color;
-    let html = `<p>${message}</p><button onclick="closeNotification()">Ok</button>`
-    div.innerHTML= html;
-    document.querySelector(".notifications").appendChild(div)
 
-
-}
 const services = [
     {
         thumbnail : "alarm-clock.png",
@@ -66,16 +56,78 @@ function closeLoginForm(){
 function closeCreateNewUserForm(){
     newUserFrom.style.display = "none";
 }
-function closeNotification(){
-    document.querySelector(".notification").style.display = "none";
-}
+
 
 //login
 
 let userLoggedIn = false;
+document.querySelector("#login-form .form #submit-button").onclick=()=>{
+    let username = document.querySelector("#login-form .form #username").value,
+     password = document.querySelector("#login-form .form #password").value;
+    if(!username || !password){
+        showNotification("fill username and password");
+        return;
+    }else{
+        fetch(`http://localhost:3001/login/${username}/${password}`, {
+            method : 'POST', 
+        }).then(res => res.json()).then(res => {
+            if(res.message){
+                showNotification(res.message);
+            }else{
+                saveCloudDataToLocalStorage(res);
+            }
+        });
+    }
+}
 
 //create new user
+document.querySelector("#login-form .form #submit-button").onclick=()=>{
+    let username = document.querySelector("#login-form .form #username").value,
+     password = document.querySelector("#login-form .form #password").value;
+    if(!username || !password){
+        showNotification("fill username and password");
+        return;
+    }else{
+        fetch(`http://localhost:3001/login/${username}/${password}`, {
+            method : 'POST', 
+        }).then(res => res.json()).then(res => {
+            if(res.message){
+                showNotification(res.message);
+            }else{
+                saveCloudDataToLocalStorage(res);
+            }
+        });
+    }
+}
+//create new user
 
+document.querySelector("#new-user-form .form #submit-button").onclick=()=>{
+    let username = document.querySelector("#new-user-form .form #username").value,
+    password = document.querySelector("#new-user-form .form #password").value;
+    confirm_password = document.querySelector("#new-user-form .form #password").value;
+
+    if(!username || !password || !confirm_password){
+        showNotification("Fill All fields");
+        return;
+    }else if(password !== confirm_password){
+        showNotification("Password not matced");
+        return;
+    }else{
+        fetch(`http://localhost:3001/newuser/${username}/${password}`, {
+            method : 'POST', 
+        }).then(res => res.json()).then(res => {
+            if(res.message){
+                showNotification(res.message);
+            }else{
+                showNotification("Account Created...");
+                closeCreateNewUserForm();
+                // uploadLocalDataToCloud();
+            }
+        });
+    }
+}
 //upload
+
+//logout
 
 

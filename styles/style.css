@@ -75,13 +75,16 @@ body .home_header a {
 body .home_header section {
   margin: 5px;
 }
-body .home_header #login, body .home_header #newuser {
+body .home_header #login, body .home_header #newuser, body .home_header #logout, body .home_header #upload {
   background: #0a84ff;
   outline: None;
   border: None;
   padding: 5px 10px;
   border-radius: 5px;
   cursor: pointer;
+}
+body .home_header #logout, body .home_header #upload {
+  display: none;
 }
 body .app {
   width: 100%;

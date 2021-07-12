@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="./styles/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script src="./scripts/script.js"  defer></script>
+    <script src="./scripts/notification.js"  defer></script>
 </head>
 <body>
     <div class="home_header">
@@ -18,7 +19,8 @@
        <section>
            <button id="login" onclick="showLoginForm()">Log In</button>
            <button id="newuser" onclick="showCreateNewUserForm()">Create New Account</button>
-            <a href="https://gkkaushik.netlify.com" target="_blank"> About Developer</a>          
+           <button id="logout" onclick="logout()">Logout</button>
+           <button id="upload" onclick="upload()">Upload to Cloud</button>
        </section>
     </div>
     <div class="app">
@@ -27,7 +29,7 @@
     </div>
     <div id="login-form" style="display: none" >
         <button id="closeForm" onclick="closeLoginForm()">X</button>
-        <form method="POST" action="https:/gopi">
+        <div class="form">
             <p>Message</p>
            <section id="username-input">
                 <label for="username">Username</label>
@@ -40,11 +42,11 @@
           <section>
             <input id="submit-button" type="submit" value="Login">
           </section>
-        </form>
+        </div>
     </div>
     <div id="new-user-form" style="display: none">
     <button id="closeForm" onclick="closeCreateNewUserForm()">X</button>
-        <form method="POST">
+        <div class="form">
             <p>Message</p>
            <section id="username-input">
                 <label for="username">Make a username</label>
@@ -56,14 +58,13 @@
            </section>
            <section id="password-input">
             <label for="username">Confirm password</label>
-            <input type="password" id="password">
+            <input type="password" id="password" class="confirm_password">
        </section>
           <section>
             <input id="submit-button" type="submit" value="Create New Account">
           </section>
-        </form>
+        </div>
     </div>
     <div class="notifications"></div>
-    <a href="about.html">asdf</a>
 </body>
 </html>

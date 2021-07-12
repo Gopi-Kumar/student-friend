@@ -26,13 +26,16 @@ body{
         section{
             margin:5px;
         }
-        #login, #newuser{
+        #login, #newuser,#logout, #upload{
             background :$apple-blue;
             outline:None;
             border:None;
             padding:5px 10px;
             border-radius: 5px;
             cursor: pointer;
+        }
+        #logout, #upload{
+            display:none;
         }
     }
     .app{
