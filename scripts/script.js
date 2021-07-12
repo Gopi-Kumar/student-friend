@@ -1,3 +1,14 @@
+const showNotification = (message, color) => {
+    document.querySelector(".notifications").innerHTML = "";
+    let div = document.createElement("div");
+    div.classList.add("notification");
+    // div.style.backgroundColor = color;
+    let html = `<p>${message}</p><button onclick="closeNotification()">Ok</button>`
+    div.innerHTML= html;
+    document.querySelector(".notifications").appendChild(div)
+
+
+}
 const services = [
     {
         thumbnail : "alarm-clock.png",
@@ -41,8 +52,6 @@ services.forEach(service => {
 })
 
 
-
-
 let loginForm = document.querySelector("#login-form");
 let newUserFrom = document.querySelector("#new-user-form");
 function showLoginForm(){
@@ -56,6 +65,9 @@ function closeLoginForm(){
 }
 function closeCreateNewUserForm(){
     newUserFrom.style.display = "none";
+}
+function closeNotification(){
+    document.querySelector(".notification").style.display = "none";
 }
 
 //login

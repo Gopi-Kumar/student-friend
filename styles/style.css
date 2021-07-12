@@ -22,6 +22,29 @@
   border-radius: 10px;
 }
 
+.notifications {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+.notifications .notification {
+  width: 200px;
+  height: 80px;
+  padding: 10px;
+  border-radius: 10px;
+  background: red;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.notifications .notification button {
+  border: 0;
+  outline: 0;
+  cursor: pointer;
+  padding: 5px;
+}
+
 body {
   background: #f2f2f7;
 }
@@ -144,6 +167,7 @@ body #new-user-form section input {
   border-bottom: 1px solid #3a3a3c;
   width: 250px;
   height: 30px;
+  padding: 5px;
 }
 body #login-form section label,
 body #new-user-form section label {
