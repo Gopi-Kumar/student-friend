@@ -72,16 +72,19 @@ function hideLogOutAndUploadButton(){
 
 
 function saveCloudDataToLocalStorage(res){
-    localStorage.setItem("notes", JSON.stringify(res.notes));
-    localStorage.setItem("todos", JSON.stringify(res.todos));
-    localStorage.setItem("alarms", JSON.stringify(res.alarms));
-    localStorage.setItem("routine", JSON.stringify(res.routine));
-    localStorage.setItem("webpage", JSON.stringify(res.webbooks));
+    console.log(JSON.parse(res.notes));
+    localStorage.setItem("notes", JSON.parse(res.notes));
+    localStorage.setItem("todos", JSON.parse(res.todos));
+    localStorage.setItem("alarms", JSON.parse(res.alarms));
+    localStorage.setItem("routine", JSON.parse(res.routine));
+    localStorage.setItem("webpage", JSON.parse(res.webbooks));
 }
 
 function showHiName(name){
-    document.querySelector("body .home_header section .logo").innerText = `Hi, ${name}`
+    document.querySelector("body .home_header section .logo").innerText = `${name}`
 }
+
+
 
 //login
 const login = (username ,password) => {
@@ -97,7 +100,8 @@ const login = (username ,password) => {
             closeLoginForm();
             saveCloudDataToLocalStorage(res);
             showLogOutAndUploadButton();
-            showHiName(username);
+            showHiName(`Hi,${username}`);
+            JSON.parse(JSON.parse(localStorage.getItem("notes"))[0])
           
         }
     });
@@ -119,58 +123,77 @@ document.querySelector("#login-form .form #submit-button").onclick=()=>{
 document.querySelector("#new-user-form .form #submit-button").onclick=()=>{
     let username = document.querySelector("#new-user-form .form #username").value,
     password = document.querySelector("#new-user-form .form #password").value;
-    confirm_password = document.querySelector("#new-user-form .form #password").value;
+    confirm_password = document.querySelector("#new-user-form .form .confirm_password").value;
 
     if(!username || !password || !confirm_password){
         showNotification("Fill All fields");
         return;
-    }else if(password !== confirm_password){
+    }
+    if(password != confirm_password){
+        console.log("password matching");
         showNotification("Password not matced");
         return;
-    }else{
-        fetch(`http://localhost:3001/newuser/${username}/${password}`, {
-            method : 'POST', 
-        }).then(res => res.json()).then(res => {
-            if(res.message == undefined){
-                showNotification(res.message);
-            }else{
-                closeCreateNewUserForm();
-                showNotification("Account Created...");
-                uploadLocalDataToCloud();
-                login(username,password);
-            }
-        });
     }
+
+    fetch(`http://localhost:3001/newuser/${username}/${password}`, {
+        method : 'POST', 
+    }).then(res => res.json()).then(res => {
+        if(res.message){
+            showNotification(res.message);
+        }else{
+            closeCreateNewUserForm();
+            showNotification("Account Created...");
+            localStorage.setItem("username",username);
+            localStorage.setItem("password", password);
+            upload();
+            login(username,password);
+            
+
+        }
+    });
+    
 }
 //upload
 
 function upload(){
     let username = localStorage.getItem("username"),
     password = localStorage.getItem("password"),
-    notes = JSON.parse(localStorage.getItem("notes")),
-    todos = JSON.parse(localStorage.getItem("todos")),
-    alarms = JSON.parse(localStorage.getItem("alarms")),
-    routine = JSON.parse(localStorage.getItem("routine")),
-    webpage = JSON.parse(localStorage.getItem("webpage"));
-    let data = {
-        username, 
-        password,
-        notes,
-        todos,
-        alarms,
-        routine,
-        webpage,
-    }
-    // console.log(JSON.stringify(data))
-    fetch(`http://localhost:3001/upload/`, {
-        method : 'POST', 
-        body : JSON.stringify(data)
-    }).then(res => res.json()).then(res => {
-        if(res.message == undefined){
+    notes = localStorage.getItem("notes"),
+    todos = localStorage.getItem("todos"),
+    alarms = localStorage.getItem("alarms"),
+    routine = localStorage.getItem("routine"),
+    webpage = localStorage.getItem("webpage");
+
+    var myHeaders = new Headers();
+    myHeaders.append("Content-Type", "application/json");
+
+    var raw = JSON.stringify({
+        "username" : username, 
+        "password" : password,
+        "notes" : notes,
+        "alarms" : alarms,
+        "routine" : routine,
+        "webpage" : webpage,
+        "todos" : todos,
+    });
+
+    var requestOptions = {
+    method: 'POST',
+    headers: myHeaders,
+    body: raw,
+    redirect: 'follow'
+    };
+
+    fetch("http://localhost:3001/upload", requestOptions)
+    .then(response => response.text())
+    .then(result => {
+        if(result.message){
             showNotification(res.message);
-        }else{
-            console.log(res);
         }
+        showNotification("Uploaded");
+    })
+    .catch(error => {
+        showNotification("Something Went Wrong");
     });
 }
 
