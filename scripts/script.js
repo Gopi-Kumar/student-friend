@@ -57,9 +57,37 @@ function closeCreateNewUserForm(){
     newUserFrom.style.display = "none";
 }
 
+function showLogOutAndUploadButton(){
+    document.querySelector("#login").style.display = "none";
+    document.querySelector("#newuser").style.display = "none";
+    document.querySelector("#upload").style.display = "flex";
+    document.querySelector("#logout").style.display = "flex";
+}
+
+function saveCloudDataToLocalStorage(res){
+    localStorage.setItem("notes", JSON.stringify(res.notes));
+    localStorage.setItem("todos", JSON.stringify(res.todos));
+    localStorage.setItem("alarms", JSON.stringify(res.alarms));
+    localStorage.setItem("routine", JSON.stringify(res.routine));
+    localStorage.setItem("webpage", JSON.stringify(res.webbooks));
+}
+
 
 //login
-
+const login = (username ,password) => {
+    fetch(`http://localhost:3001/login/${username}/${password}`, {
+        method : 'POST', 
+    }).then(res => res.json()).then(res => {
+        if(res.message){
+            showNotification(res.message);
+        }else{
+            closeLoginForm();
+            saveCloudDataToLocalStorage(res);
+            showLogOutAndUploadButton();
+            // showHiName(username);
+        }
+    });
+}
 let userLoggedIn = false;
 document.querySelector("#login-form .form #submit-button").onclick=()=>{
     let username = document.querySelector("#login-form .form #username").value,
@@ -68,37 +96,12 @@ document.querySelector("#login-form .form #submit-button").onclick=()=>{
         showNotification("fill username and password");
         return;
     }else{
-        fetch(`http://localhost:3001/login/${username}/${password}`, {
-            method : 'POST', 
-        }).then(res => res.json()).then(res => {
-            if(res.message){
-                showNotification(res.message);
-            }else{
-                saveCloudDataToLocalStorage(res);
-            }
-        });
+        login(username,password);
+        closeLoginForm();
     }
 }
 
-//create new user
-document.querySelector("#login-form .form #submit-button").onclick=()=>{
-    let username = document.querySelector("#login-form .form #username").value,
-     password = document.querySelector("#login-form .form #password").value;
-    if(!username || !password){
-        showNotification("fill username and password");
-        return;
-    }else{
-        fetch(`http://localhost:3001/login/${username}/${password}`, {
-            method : 'POST', 
-        }).then(res => res.json()).then(res => {
-            if(res.message){
-                showNotification(res.message);
-            }else{
-                saveCloudDataToLocalStorage(res);
-            }
-        });
-    }
-}
+
 //create new user
 
 document.querySelector("#new-user-form .form #submit-button").onclick=()=>{
@@ -116,12 +119,13 @@ document.querySelector("#new-user-form .form #submit-button").onclick=()=>{
         fetch(`http://localhost:3001/newuser/${username}/${password}`, {
             method : 'POST', 
         }).then(res => res.json()).then(res => {
-            if(res.message){
+            if(res.message == undefined){
                 showNotification(res.message);
             }else{
-                showNotification("Account Created...");
                 closeCreateNewUserForm();
+                showNotification("Account Created...");
                 // uploadLocalDataToCloud();
+                login(username,password);
             }
         });
     }

@@ -123,6 +123,12 @@ body .app .services .service a {
   text-decoration: none;
   border-radius: 5px;
 }
+body .app .services .service #authButtton {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
 body #login-form,
 body #new-user-form {
   width: 400px;

@@ -70,7 +70,9 @@ body{
                     text-decoration: none;
                     border-radius: 5px;
                 }
-               
+                #authButtton{
+                    @include display_as_row_center;
+                }
                 
             }
         }
