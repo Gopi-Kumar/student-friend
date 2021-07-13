@@ -23,10 +23,12 @@ body{
             border-radius: 5px;
             font-size: 13px;
         }
-        section{
-            margin:5px;
+    
+        #authButtons{
+            @include display_as_row_center;
         }
         #login, #newuser,#logout, #upload{
+            margin:5px;
             background :$apple-blue;
             outline:None;
             border:None;
@@ -70,9 +72,7 @@ body{
                     text-decoration: none;
                     border-radius: 5px;
                 }
-                #authButtton{
-                    @include display_as_row_center;
-                }
+                
                 
             }
         }

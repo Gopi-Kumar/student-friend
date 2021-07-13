@@ -72,10 +72,14 @@ body .home_header a {
   border-radius: 5px;
   font-size: 13px;
 }
-body .home_header section {
-  margin: 5px;
+body .home_header #authButtons {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
 }
 body .home_header #login, body .home_header #newuser, body .home_header #logout, body .home_header #upload {
+  margin: 5px;
   background: #0a84ff;
   outline: None;
   border: None;
@@ -122,12 +126,6 @@ body .app .services .service a {
   margin: 0.5rem;
   text-decoration: none;
   border-radius: 5px;
-}
-body .app .services .service #authButtton {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
 }
 body #login-form,
 body #new-user-form {

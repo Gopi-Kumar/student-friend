@@ -63,6 +63,13 @@ function showLogOutAndUploadButton(){
     document.querySelector("#upload").style.display = "flex";
     document.querySelector("#logout").style.display = "flex";
 }
+function hideLogOutAndUploadButton(){
+    document.querySelector("#login").style.display = "flex";
+    document.querySelector("#newuser").style.display = "flex";
+    document.querySelector("#upload").style.display = "none";
+    document.querySelector("#logout").style.display = "none";
+}
+
 
 function saveCloudDataToLocalStorage(res){
     localStorage.setItem("notes", JSON.stringify(res.notes));
@@ -72,8 +79,12 @@ function saveCloudDataToLocalStorage(res){
     localStorage.setItem("webpage", JSON.stringify(res.webbooks));
 }
 
+function showHiName(name){
+    document.querySelector("body .home_header section .logo").innerText = `Hi, ${name}`
+}
 
 //login
+
 const login = (username ,password) => {
     fetch(`http://localhost:3001/login/${username}/${password}`, {
         method : 'POST', 
@@ -81,14 +92,17 @@ const login = (username ,password) => {
         if(res.message){
             showNotification(res.message);
         }else{
+            localStorage.setItem("userlogged", "true");
+            localStorage.setItem("username", username);
+            localStorage.setItem("password", password);
             closeLoginForm();
             saveCloudDataToLocalStorage(res);
             showLogOutAndUploadButton();
-            // showHiName(username);
+            showHiName(username);
+          
         }
     });
 }
-let userLoggedIn = false;
 document.querySelector("#login-form .form #submit-button").onclick=()=>{
     let username = document.querySelector("#login-form .form #username").value,
      password = document.querySelector("#login-form .form #password").value;
@@ -124,7 +138,7 @@ document.querySelector("#new-user-form .form #submit-button").onclick=()=>{
             }else{
                 closeCreateNewUserForm();
                 showNotification("Account Created...");
-                // uploadLocalDataToCloud();
+                uploadLocalDataToCloud();
                 login(username,password);
             }
         });
@@ -133,5 +147,20 @@ document.querySelector("#new-user-form .form #submit-button").onclick=()=>{
 //upload
 
 //logout
+function logout(){
+    localStorage.setItem("userlogged", "false");
+    hideLogOutAndUploadButton();
+    showHiName("Student Friend")
+}
+
+
+
+
+//if user logged before
+if(localStorage.getItem("userlogged") == "true"){
+    console.log("Hello")
+    showLogOutAndUploadButton();
+    showHiName(localStorage.getItem("username"));
+}
 
 
