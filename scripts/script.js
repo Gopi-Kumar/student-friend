@@ -84,7 +84,6 @@ function showHiName(name){
 }
 
 //login
-
 const login = (username ,password) => {
     fetch(`http://localhost:3001/login/${username}/${password}`, {
         method : 'POST', 
@@ -117,7 +116,6 @@ document.querySelector("#login-form .form #submit-button").onclick=()=>{
 
 
 //create new user
-
 document.querySelector("#new-user-form .form #submit-button").onclick=()=>{
     let username = document.querySelector("#new-user-form .form #username").value,
     password = document.querySelector("#new-user-form .form #password").value;
@@ -146,11 +144,47 @@ document.querySelector("#new-user-form .form #submit-button").onclick=()=>{
 }
 //upload
 
+function upload(){
+    let username = localStorage.getItem("username"),
+    password = localStorage.getItem("password"),
+    notes = JSON.parse(localStorage.getItem("notes")),
+    todos = JSON.parse(localStorage.getItem("todos")),
+    alarms = JSON.parse(localStorage.getItem("alarms")),
+    routine = JSON.parse(localStorage.getItem("routine")),
+    webpage = JSON.parse(localStorage.getItem("webpage"));
+    let data = {
+        username, 
+        password,
+        notes,
+        todos,
+        alarms,
+        routine,
+        webpage,
+    }
+    // console.log(JSON.stringify(data))
+    fetch(`http://localhost:3001/upload/`, {
+        method : 'POST', 
+        body : JSON.stringify(data)
+    }).then(res => res.json()).then(res => {
+        if(res.message == undefined){
+            showNotification(res.message);
+        }else{
+            console.log(res);
+        }
+    });
+}
+
 //logout
 function logout(){
     localStorage.setItem("userlogged", "false");
     hideLogOutAndUploadButton();
-    showHiName("Student Friend")
+    showHiName("Student Friend");
+    localStorage.removeItem("notes");
+    localStorage.removeItem("todos");
+    localStorage.removeItem("alarms");
+    localStorage.removeItem("routine");
+    localStorage.removeItem("webpage");
+   
 }
 
 
