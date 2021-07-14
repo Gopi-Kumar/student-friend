@@ -6,7 +6,10 @@ function saveWebPagesToLocalStorage(){
 }
 
 function getWebPagesFromLocalStorage(){
+    // let webpage = localStorage.getItem("webpage");
+    // console.log(webpage);
     return JSON.parse(localStorage.getItem("webpage"));
+    
 }
 
 function getRandomId(){

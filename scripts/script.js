@@ -1,3 +1,5 @@
+const endpoint = "https://student-friend-backend.herokuapp.com";
+// const endpoint = "http://localhost:3001";
 
 const services = [
     {
@@ -89,7 +91,7 @@ function showHiName(name){
 
 //login
 const login = (username ,password) => {
-    fetch(`http://localhost:3001/login/${username}/${password}`, {
+    fetch(`${endpoint}/login/${username}/${password}`, {
         method : 'POST', 
     }).then(res => res.json()).then(res => {
         if(res.message){
@@ -135,7 +137,7 @@ document.querySelector("#new-user-form .form #submit-button").onclick=()=>{
         return;
     }
 
-    fetch(`http://localhost:3001/newuser/${username}/${password}`, {
+    fetch(`${endpoint}/newuser/${username}/${password}`, {
         method : 'POST', 
     }).then(res => res.json()).then(res => {
         if(res.message){
@@ -184,7 +186,7 @@ function upload(){
     redirect: 'follow'
     };
 
-    fetch("http://localhost:3001/upload", requestOptions)
+    fetch(`${endpoint}/upload`, requestOptions)
     .then(response => response.text())
     .then(result => {
         if(result.message){

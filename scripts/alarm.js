@@ -24,7 +24,7 @@ renderAlarmData();
 
 //rendering all alarm from alarmData
 function renderAlarmData(){
-    alarms.innerHTML = "";
+    // alarms.innerHTML = "";
     if(alarmData == null){
         showNotification("Currently you don't have any alarm");
         alarmData = [];

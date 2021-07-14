@@ -16,6 +16,7 @@ const notesContainer = document.querySelector(".notes");
 function renderNotes(notesItemArray){
     if(notesItemArray == null || notesItemArray.length == 0){
         notesContainer.innerHTML = "<h1 style='color: gray;'>No Notes 🙄</h1><button onClick='addNewNote()'>Add some notes</button>"
+        notesItemArray = [];
         return;
     }
 
@@ -118,8 +119,10 @@ function deleteNote(){
     notesItem = newNotesData;
     saveNotesToLocalStorage();
     notesItem = getNotesFromLocalStorage();
-    notesContainer.innerHTML = "";
     renderNotes(notesItem);
+    console.log("slaj")
+    location.reload();
+
 }
 
 function editNote(){
