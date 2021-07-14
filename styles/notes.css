@@ -32,7 +32,9 @@
   height: 80px;
   padding: 10px;
   border-radius: 10px;
-  background: red;
+  font-size: 12px;
+  background: rgba(255, 21, 21, 0.952);
+  color: white;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -43,6 +45,8 @@
   outline: 0;
   cursor: pointer;
   padding: 5px;
+  background-color: white !important;
+  color: black !important;
 }
 
 .header {

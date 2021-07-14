@@ -21,7 +21,7 @@ function renderTodo(){
         const addTodo = document.createElement("div");
         addTodo.classList.add("add_todo");
         const html = `
-                <input placeholder="Add new todo" type="text" name="" id="">
+                <input placeholder="Add new todo" type="text" name="" id="new_todo_input">
                 <button onclick="addTodo()">Add Todo</button>
                 `
         addTodo.innerHTML = html;
@@ -85,8 +85,8 @@ function deleteTodo(id){
 
 const todoInput = document.querySelector(".add_todo #new_todo_input")
 
-// todoInput.addEventListener("keypress", (e)=>{
-//     if(e.key === "Enter"){
-//         addTodo();
-//     }
-// })
+todoInput.addEventListener("keypress", (e)=>{
+    if(e.key === "Enter"){
+        addTodo();
+    }
+})

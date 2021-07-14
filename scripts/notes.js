@@ -15,6 +15,7 @@ function getRandomId(){
 const notesContainer = document.querySelector(".notes");
 function renderNotes(notesItemArray){
     if(notesItemArray == null || notesItemArray.length == 0){
+        notesContainer.innerHTML = "<h1 style='color: gray;'>No Notes 🙄</h1><button onClick='addNewNote()'>Add some notes</button>"
         return;
     }
 
@@ -69,6 +70,7 @@ function saveNote(){
     let noteText = document.querySelector("textarea").value;
     let note_name = document.querySelector("#note_name").value;
     if(noteText == "" || note_name == ""){
+        showNotification("Fill All field");
         return;
     }
     if(notesItem == null){

@@ -90,6 +90,7 @@ function saveWebPage(){
     let webpageName = document.querySelector("#webPageName").value;
     let webPageUrl = document.querySelector("#webPageUrl").value;
     if(webpageName == "" || webPageUrl == ""){
+        showNotification("Fill all field correctly");
         return;
     }
     if(webPages == null){

@@ -69,14 +69,17 @@
         height: 80px;
         padding:10px;
         border-radius: 10px;
-        
-        background:red;
+        font-size: 12px;
+        background:$red;
+        color:$white;
         @include display_as_row_space_between;
         button{
             border: 0;
             outline:0;
             cursor: pointer;
             padding:5px;
+            background-color: $white !important;
+            color:black !important; 
         }
           
       }

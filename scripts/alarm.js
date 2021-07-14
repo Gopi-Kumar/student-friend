@@ -26,6 +26,8 @@ renderAlarmData();
 function renderAlarmData(){
     alarms.innerHTML = "";
     if(alarmData == null){
+        showNotification("Currently you don't have any alarm");
+        alarmData = [];
         return;
     }
     alarmData.map(alarm => {
@@ -134,6 +136,8 @@ function addAlarm() {
             closeForm();
             hideOverlay();
         }
+    }else{
+        showNotification("Fill all fields correctly..")
     }
 
     
