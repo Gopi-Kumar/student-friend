@@ -72,12 +72,13 @@ function hideLogOutAndUploadButton(){
 
 
 function saveCloudDataToLocalStorage(res){
-    console.log(JSON.parse(res.notes));
-    localStorage.setItem("notes", JSON.parse(res.notes));
-    localStorage.setItem("todos", JSON.parse(res.todos));
-    localStorage.setItem("alarms", JSON.parse(res.alarms));
-    localStorage.setItem("routine", JSON.parse(res.routine));
-    localStorage.setItem("webpage", JSON.parse(res.webbooks));
+   let {notes, todos, routine, webpage, alarms} = res;
+   localStorage.setItem("notes", notes);
+   localStorage.setItem("todos",todos);
+   localStorage.setItem("alarms",alarms);
+   localStorage.setItem("routine",routine);
+   localStorage.setItem("webpage",webpage);
+   
 }
 
 function showHiName(name){
@@ -101,7 +102,6 @@ const login = (username ,password) => {
             saveCloudDataToLocalStorage(res);
             showLogOutAndUploadButton();
             showHiName(`Hi,${username}`);
-            JSON.parse(JSON.parse(localStorage.getItem("notes"))[0])
           
         }
     });
@@ -163,7 +163,7 @@ function upload(){
     alarms = localStorage.getItem("alarms"),
     routine = localStorage.getItem("routine"),
     webpage = localStorage.getItem("webpage");
-
+    console.log("uploaded webpage is ", webpage);
     var myHeaders = new Headers();
     myHeaders.append("Content-Type", "application/json");
 
@@ -215,7 +215,6 @@ function logout(){
 
 //if user logged before
 if(localStorage.getItem("userlogged") == "true"){
-    console.log("Hello")
     showLogOutAndUploadButton();
     showHiName(localStorage.getItem("username"));
 }
