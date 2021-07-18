@@ -121,5 +121,28 @@ body{
             }
         }
     }
+    .show_note{
+        @include display_as_column_center;
+        position: absolute;
+        top:0;
+        left:0;
+        width:100%;
+        height:100%;
+        background:$light-gray;
+        display:none;
+        section{
+            @include display_as_row_space_between;
+            background: $white;
+            width:300px;
+            padding:5px 10px;
+            font-weight: bold;
+            &:nth-child(2){
+                font-weight: normal;
+                text-align: center;
+                min-height:450px;
+                border-top: 1px solid $black;
+            }
+        }
+    }
   
 }
