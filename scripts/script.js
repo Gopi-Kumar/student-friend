@@ -1,5 +1,11 @@
+showProcessing("Loading...");
+window.addEventListener("DOMContentLoaded", ()=>{
+    hideProcessing();
+    // showProcessing("")
+})
+// window.addEventListener("DOMContentLoaded",()=>{)
 const endpoint = "https://student-friend-backend.herokuapp.com";
-// const endpoint = "http://localhost:3001";
+// const endpoint = "http://localhost:3000";
 
 const services = [
     {
@@ -70,16 +76,20 @@ function hideLogOutAndUploadButton(){
     document.querySelector("#newuser").style.display = "flex";
     document.querySelector("#upload").style.display = "none";
     document.querySelector("#logout").style.display = "none";
+    hideProcessing();
 }
 
 
 function saveCloudDataToLocalStorage(res){
+   showProcessing("Saving Data...")
    let {notes, todos, routine, webpage, alarms} = res;
    localStorage.setItem("notes", notes);
    localStorage.setItem("todos",todos);
    localStorage.setItem("alarms",alarms);
    localStorage.setItem("routine",routine);
    localStorage.setItem("webpage",webpage);
+   hideProcessing();
+   
    
 }
 
@@ -91,10 +101,12 @@ function showHiName(name){
 
 //login
 const login = (username ,password) => {
+    showProcessing("Logging In...");
     fetch(`${endpoint}/login/${username}/${password}`, {
         method : 'POST', 
     }).then(res => res.json()).then(res => {
         if(res.message){
+            
             showNotification(res.message);
         }else{
             localStorage.setItem("userlogged", "true");
@@ -104,7 +116,6 @@ const login = (username ,password) => {
             saveCloudDataToLocalStorage(res);
             showLogOutAndUploadButton();
             showHiName(`Hi,${username}`);
-          
         }
     });
 }
@@ -136,18 +147,21 @@ document.querySelector("#new-user-form .form #submit-button").onclick=()=>{
         showNotification("Password not matced");
         return;
     }
-
+    showNotification("Creating Account...")
     fetch(`${endpoint}/newuser/${username}/${password}`, {
         method : 'POST', 
     }).then(res => res.json()).then(res => {
         if(res.message){
+            
             showNotification(res.message);
         }else{
+            
             closeCreateNewUserForm();
             showNotification("Account Created...");
             localStorage.setItem("username",username);
             localStorage.setItem("password", password);
             upload();
+
             login(username,password);
             
 
@@ -158,6 +172,7 @@ document.querySelector("#new-user-form .form #submit-button").onclick=()=>{
 //upload
 
 function upload(){
+    showProcessing("Uploading...");
     let username = localStorage.getItem("username"),
     password = localStorage.getItem("password"),
     notes = localStorage.getItem("notes"),
@@ -190,17 +205,23 @@ function upload(){
     .then(response => response.text())
     .then(result => {
         if(result.message){
+            hideProcessing();
             showNotification(res.message);
         }
+        hideProcessing();
         showNotification("Uploaded");
     })
     .catch(error => {
         showNotification("Something Went Wrong");
     });
+    
+    
 }
 
 //logout
 function logout(){
+    showProcessing("Logging Out..")
+    
     localStorage.setItem("userlogged", "false");
     hideLogOutAndUploadButton();
     showHiName("Student Friend");

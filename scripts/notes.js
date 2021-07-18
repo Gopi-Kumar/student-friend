@@ -140,7 +140,7 @@ function editNote(){
         }
     })
     
-    deleteNote();
+    
     
     if(optionsOpened){
         closeOptions();
