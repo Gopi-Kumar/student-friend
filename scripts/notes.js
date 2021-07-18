@@ -59,6 +59,7 @@ function renderNotes(notesItemArray){
                     <div></div>
                 </div>
                 <div class="options">
+                    <button onclick="closeOptions()">x</button>
                     <p onclick="editNote()">Edit</p>
                     <p onclick="deleteNote()">Delete</p>                
                 </div>

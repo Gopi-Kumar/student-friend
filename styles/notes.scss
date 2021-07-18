@@ -71,7 +71,6 @@ body{
                         background-color: $white;
                         // border-radius: 5px;
                         border: 0.5px solid $light-black;
-                        overflow:hidden;
                         right:30px;
                         top:5px;
                         display:none;
@@ -82,6 +81,14 @@ body{
                                 background:$black;
                                 color:$white;
                             }
+                        }
+                        button{
+                            position: absolute;
+                            right:-28px;
+                            @include display_center;
+                            width:22px !important;
+                            height:22px;
+                            padding:0;
                         }
                     }
                 }
