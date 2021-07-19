@@ -10,6 +10,9 @@ body{
             @include display_as_row_center;
             flex-wrap: wrap;
             padding:3rem 2rem;
+            @media only screen and (max-width:460px){
+                padding:0;
+            }
             .webpage{
                 position: relative;
                 @include display_as_column_center;
@@ -21,6 +24,9 @@ body{
                     i{
                         display:block;
                     }
+                }
+                @media only screen and (max-width: 460px) {
+                    margin:5px;
                 }
 
                 i{

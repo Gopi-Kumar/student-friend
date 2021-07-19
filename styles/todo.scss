@@ -38,25 +38,38 @@ body{
 
     }
     .add_todo{
+        @include display_as_row_center;
+        width:100%;
+        margin-top: 5px;
         // position:fixed;
         // bottom:10px;
         input{
-            width:240px;
+            // width:240px;
+            min-width: 250px;
             height:30px;
             outline-color: $apple-blue;
-            margin-top: 10px;
+            // margin-top: 10px;
         }
         button{
-            height:30px;
             cursor:pointer;
             background:$apple-blue;
             outline:0;
             border:0;
             color:$white;
-            padding:0px 5px;
             border-radius: 5px;
+            font-size: 20px;
+            width:30px;
+            margin-left: 3px;
         }
     }
 
 }
 
+
+@media only screen and (max-width: 350px) {
+    body .todos{
+        margin-top:0px;
+        width:100%;
+
+    }
+}

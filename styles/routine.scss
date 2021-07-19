@@ -47,14 +47,16 @@ body{
         }
     }
     .routine{
-        width: 700px;
         background: $white;
         border:2px solid $apple-blue;
         .routine_item{
             text-align: center;
             @include display_as_row;
+            section{
+                @include display_as_row_center
+            }
             .from_time, .to_time{
-                width: 200px;
+                width: 199px;
                 border-right: 2px solid $apple-blue;
             }
             p{
@@ -129,5 +131,62 @@ body{
             width: 200px;
         }
         
+    }
+}
+
+@media only screen and (max-width:750px){
+    body{
+        font-size: 13px;
+        padding:1px;
+        .routine_header{
+            @include display_as_column_center;
+            border:2px solid $apple-blue;
+            border-bottom: none;
+            .time_section{
+                border:none;
+            }
+            .work_section{
+                border-top: 2px solid $apple-blue;
+                width:100%;
+                padding:5px
+            }
+        }
+       .routine{
+           border-top: 0;
+           .routine_item{
+               @include display_as_column_center;
+               border:none;
+               .from_time,.to_time{
+                   border:none;
+                   border-bottom: 2px solid $apple-blue;
+                   border-top: 2px solid $apple-blue;
+                   font-weight: bold;
+
+               }
+               .to_time{
+                   border-left:2px solid $apple-blue;
+               }
+           }
+       }
+       .add_routine{
+            width:auto;
+           @include display_as_column_center;
+           .from_time_input,.to_time_input{
+                width:200px;
+                border:none;
+                
+           }
+           .work_name_input{
+            border:0;
+           }
+       }
+
+    }
+   
+}
+
+@media only screen and (max-width:500){
+    body{
+        font-size: 10px;
     }
 }

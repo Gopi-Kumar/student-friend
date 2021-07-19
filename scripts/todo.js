@@ -22,7 +22,7 @@ function renderTodo(){
         addTodo.classList.add("add_todo");
         const html = `
                 <input placeholder="Add new todo" type="text" name="" id="new_todo_input">
-                <button onclick="addTodo()">Add Todo</button>
+                <button onclick="addTodo()"><i class="fas fa-check-circle"></i></button>
                 `
         addTodo.innerHTML = html;
         todosContainer.appendChild(addTodo);
@@ -42,7 +42,7 @@ function renderTodo(){
     addTodo.classList.add("add_todo");
     const html = `
             <input placeholder="Add new todo" type="text" name="" id="new_todo_input">
-            <button onclick="addTodo()">Add Todo</button>
+            <button onclick="addTodo()"><i class="fas fa-check-circle"></i></button>
             `
     addTodo.innerHTML = html;
     todosContainer.appendChild(addTodo)

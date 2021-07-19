@@ -122,13 +122,14 @@
 .header #show_dropdown_menu, .header #hide_dropdown_menu {
   outline: 0;
   border: 0;
-  padding: 5px 10px !important;
+  padding: 2px 5px !important;
   border-radius: 5px !important;
   cursor: pointer !important;
   display: none;
   background: white !important;
   color: black !important;
   box-shadow: none !important;
+  font-size: 18px;
 }
 
 @media only screen and (max-width: 830px) {
@@ -138,6 +139,32 @@
   }
   .header .logo {
     text-align: left;
+  }
+  .header .navbar {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: #3a3a3c;
+    bottom: 0;
+    display: none;
+  }
+  .header #show_dropdown_menu, .header #hide_dropdown_menu {
+    position: absolute !important;
+    right: 20px !important;
+    top: 25px !important;
+  }
+  .header #show_dropdown_menu {
+    display: block;
+  }
+}
+@media only screen and (max-width: 350px) {
+  .header {
+    display: flex;
+    flex-direction: column;
+  }
+  .header .logo {
+    font-size: 25px;
   }
   .header .navbar {
     display: flex;
@@ -207,7 +234,6 @@ body .routine_header .work_section {
   width: 300px;
 }
 body .routine {
-  width: 700px;
   background: white;
   border: 2px solid #0a84ff;
 }
@@ -216,8 +242,14 @@ body .routine .routine_item {
   display: flex;
   flex-direction: row;
 }
+body .routine .routine_item section {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
 body .routine .routine_item .from_time, body .routine .routine_item .to_time {
-  width: 200px;
+  width: 199px;
   border-right: 2px solid #0a84ff;
 }
 body .routine .routine_item p {
@@ -293,6 +325,67 @@ body .add_routine ::placeholder {
 }
 body .add_routine #workNameInput {
   width: 200px;
+}
+
+@media only screen and (max-width: 750px) {
+  body {
+    font-size: 13px;
+    padding: 1px;
+  }
+  body .routine_header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid #0a84ff;
+    border-bottom: none;
+  }
+  body .routine_header .time_section {
+    border: none;
+  }
+  body .routine_header .work_section {
+    border-top: 2px solid #0a84ff;
+    width: 100%;
+    padding: 5px;
+  }
+  body .routine {
+    border-top: 0;
+  }
+  body .routine .routine_item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: none;
+  }
+  body .routine .routine_item .from_time, body .routine .routine_item .to_time {
+    border: none;
+    border-bottom: 2px solid #0a84ff;
+    border-top: 2px solid #0a84ff;
+    font-weight: bold;
+  }
+  body .routine .routine_item .to_time {
+    border-left: 2px solid #0a84ff;
+  }
+  body .add_routine {
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  body .add_routine .from_time_input, body .add_routine .to_time_input {
+    width: 200px;
+    border: none;
+  }
+  body .add_routine .work_name_input {
+    border: 0;
+  }
+}
+@media only screen and (max-width: 500) {
+  body {
+    font-size: 10px;
+  }
 }
 
 /*# sourceMappingURL=routine.css.map */

@@ -122,13 +122,14 @@
 .header #show_dropdown_menu, .header #hide_dropdown_menu {
   outline: 0;
   border: 0;
-  padding: 5px 10px !important;
+  padding: 2px 5px !important;
   border-radius: 5px !important;
   cursor: pointer !important;
   display: none;
   background: white !important;
   color: black !important;
   box-shadow: none !important;
+  font-size: 18px;
 }
 
 @media only screen and (max-width: 830px) {
@@ -138,6 +139,32 @@
   }
   .header .logo {
     text-align: left;
+  }
+  .header .navbar {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: #3a3a3c;
+    bottom: 0;
+    display: none;
+  }
+  .header #show_dropdown_menu, .header #hide_dropdown_menu {
+    position: absolute !important;
+    right: 20px !important;
+    top: 25px !important;
+  }
+  .header #show_dropdown_menu {
+    display: block;
+  }
+}
+@media only screen and (max-width: 350px) {
+  .header {
+    display: flex;
+    flex-direction: column;
+  }
+  .header .logo {
+    font-size: 25px;
   }
   .header .navbar {
     display: flex;
@@ -168,6 +195,11 @@ body .webpages_container .webpages {
   flex-wrap: wrap;
   padding: 3rem 2rem;
 }
+@media only screen and (max-width: 460px) {
+  body .webpages_container .webpages {
+    padding: 0;
+  }
+}
 body .webpages_container .webpages .webpage {
   position: relative;
   display: flex;
@@ -181,6 +213,11 @@ body .webpages_container .webpages .webpage {
 }
 body .webpages_container .webpages .webpage:hover i {
   display: block;
+}
+@media only screen and (max-width: 460px) {
+  body .webpages_container .webpages .webpage {
+    margin: 5px;
+  }
 }
 body .webpages_container .webpages .webpage i {
   display: none;
