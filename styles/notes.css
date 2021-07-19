@@ -1,10 +1,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap");
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css");
+@import url("https://fonts.googleapis.com/css2?family=Heebo:wght@100;300;400;600;700;900&display=swap");
 @import "./color.css";
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: Roboto;
+  font-family: "Heebo", sans-serif;
 }
 
 ::-webkit-scrollbar {
@@ -123,7 +125,10 @@
   padding: 5px 10px !important;
   border-radius: 5px !important;
   cursor: pointer !important;
-  display: none !important;
+  display: none;
+  background: white !important;
+  color: black !important;
+  box-shadow: none !important;
 }
 
 @media only screen and (max-width: 830px) {
@@ -141,13 +146,15 @@
     align-items: center;
     background: #3a3a3c;
     bottom: 0;
-    display: None;
+    display: none;
   }
   .header #show_dropdown_menu, .header #hide_dropdown_menu {
-    display: block !important;
     position: absolute !important;
     right: 20px !important;
     top: 25px !important;
+  }
+  .header #show_dropdown_menu {
+    display: block;
   }
 }
 body button {

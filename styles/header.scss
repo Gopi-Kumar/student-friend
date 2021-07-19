@@ -32,7 +32,10 @@
         cursor: pointer !important;
         // color:$white;
         // background:black;
-        display:none !important;
+        display:none;
+        background:$white !important;
+        color:black !important;
+        box-shadow: none!important;
     }
 }
 
@@ -45,16 +48,17 @@
         }
       .navbar{
           @include display_as_column_center;
-            background: $black;
+          background: $black;
           bottom: 0;
-          display:None;
+          display:none;
       }
       #show_dropdown_menu, #hide_dropdown_menu{
-          display:block !important;
           position: absolute !important;
           right:20px !important;
           top:25px !important;
-        
+      }
+      #show_dropdown_menu{
+          display:block;
       }
     }
   }
