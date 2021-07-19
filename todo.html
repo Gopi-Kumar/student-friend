@@ -6,10 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SF::Todo</title>
     <link rel="stylesheet" href="./styles/todo.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
     <div class="header">
         <p class="logo">Students Friend</p>
+        <button onclick="hideDropdownMenu()" id="hide_dropdown_menu"><i class="far fa-window-close"  "></i></button>
+        <button id="show_dropdown_menu"  onclick="showDropdownMenu()"><i class="fas fa-bars"></i></button>
         <div class="navbar">
             <a href="index.html" id="backToHome">Back to home</a>
             <a href="alarm.html">Alarm</a>
@@ -24,6 +27,7 @@
     </div>
     <div class="notifications"></div>
     <script src="./scripts/notification.js"  defer></script>
+    <script src="./scripts/dropdown.js"  defer></script>
 </body>
 <script src="./scripts/todo.js" defer></script>
 </html>

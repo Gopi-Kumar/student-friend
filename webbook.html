@@ -8,11 +8,15 @@
     <link rel="stylesheet" href="./styles/webbook.css">
     <script src="./scripts/webbook.js" defer></script>
     <script src="./scripts/notification.js"  defer></script>
+    <script src="./scripts/dropdown.js"  defer></script>
+
 
 </head>
 <body>
     <div class="header">
         <p class="logo">Students Friend</p>
+        <button onclick="hideDropdownMenu()" id="hide_dropdown_menu"><i class="far fa-window-close" ></i></button>
+        <button id="show_dropdown_menu"  onclick="showDropdownMenu()"><i class="fas fa-bars"></i></button>
         <div class="navbar">
             <a href="index.html" id="backToHome">Back to home</a>
             <a href="alarm.html">Alarm</a>

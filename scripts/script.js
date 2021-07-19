@@ -147,24 +147,20 @@ document.querySelector("#new-user-form .form #submit-button").onclick=()=>{
         showNotification("Password not matced");
         return;
     }
-    showNotification("Creating Account...")
+    showProcessing("Creating Account...")
     fetch(`${endpoint}/newuser/${username}/${password}`, {
         method : 'POST', 
     }).then(res => res.json()).then(res => {
         if(res.message){
-            
+            hideProcessing();
             showNotification(res.message);
         }else{
             
             closeCreateNewUserForm();
-            showNotification("Account Created...");
             localStorage.setItem("username",username);
             localStorage.setItem("password", password);
             upload();
-
             login(username,password);
-            
-
         }
     });
     
