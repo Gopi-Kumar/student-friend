@@ -3,9 +3,9 @@ window.addEventListener("DOMContentLoaded", ()=>{
     hideProcessing();
     // showProcessing("")
 })
-// window.addEventListener("DOMContentLoaded",()=>{)
+
+
 const endpoint = "https://student-friend-backend.herokuapp.com";
-// const endpoint = "http://localhost:3000";
 
 const services = [
     {
@@ -235,7 +235,12 @@ function logout(){
 //if user logged before
 if(localStorage.getItem("userlogged") == "true"){
     showLogOutAndUploadButton();
-    showHiName(localStorage.getItem("username"));
+    showHiName(`Hi, ${localStorage.getItem("username")}`);
 }
+
+window.addEventListener('beforeunload', function (e) {
+    e.preventDefault();
+    e.returnValue = '';
+});
 
 

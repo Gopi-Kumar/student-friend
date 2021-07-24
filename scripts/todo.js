@@ -18,6 +18,7 @@ const todosContainer = document.querySelector(".todos");
 function renderTodo(){
     todosContainer.innerHTML = "";
     if(todos == null){
+        todos = [];
         const addTodo = document.createElement("div");
         addTodo.classList.add("add_todo");
         const html = `
