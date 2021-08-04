@@ -106,8 +106,8 @@ const login = (username ,password) => {
         method : 'POST', 
     }).then(res => res.json()).then(res => {
         if(res.message){
-            
             showNotification(res.message);
+            hideProcessing();
         }else{
             localStorage.setItem("userlogged", "true");
             localStorage.setItem("username", username);
@@ -238,9 +238,5 @@ if(localStorage.getItem("userlogged") == "true"){
     showHiName(`Hi, ${localStorage.getItem("username")}`);
 }
 
-window.addEventListener('beforeunload', function (e) {
-    e.preventDefault();
-    e.returnValue = '';
-});
 
 

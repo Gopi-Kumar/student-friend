@@ -107,6 +107,7 @@ function saveNote(){
         name : note_name,
         note : noteText
     });
+    deleteNote();
     saveNotesToLocalStorage();
     notesItem = getNotesFromLocalStorage();
     notesContainer.innerHTML = "";
@@ -145,14 +146,12 @@ function deleteNote(){
     notesItem = newNotesData;
     saveNotesToLocalStorage();
     notesItem = getNotesFromLocalStorage();
-    renderNotes(notesItem);
-    console.log("slaj")
     location.reload();
-
 }
 
 
 function editNote(){
+
     newNoteForm.style.display = "block";
     let cancelButton = document.querySelectorAll(".save_and_cancel button")[0];
     cancelButton.innerHTML = "Delete";
@@ -160,13 +159,14 @@ function editNote(){
     cancelButton.addEventListener("click", ()=>{
         deleteNote();
     })
+    // deleteNote();
     notesItem.map(note => {
         if(note.id == currentNoteId){
             noteTextArea.value = note.note;
             noteNameInput.value= note.name;
         }
     })
-    
+  
     
     
     if(optionsOpened){

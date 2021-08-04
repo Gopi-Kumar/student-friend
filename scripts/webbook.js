@@ -139,8 +139,7 @@ function deleteWebPage(arg){
     });
     webPages = newWebpages;
     saveWebPagesToLocalStorage();
-    webPages = getWebPagesFromLocalStorage();
-    renderWebPages(webPages);
+    location.reload();    
 }
 
 document.querySelector("#webPageUrl").addEventListener("keypress", (e)=>{

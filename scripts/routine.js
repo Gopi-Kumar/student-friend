@@ -97,7 +97,7 @@
 
     function deleteRoutine(){
         localStorage.removeItem("routine");
-        window.location.href = "/routine.html"
+        window.location.href = "routine.html"
         // routineItems = getRoutineFromLocalStorage();
         // renderRoutine(routineItems);
 
