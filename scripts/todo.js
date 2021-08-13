@@ -86,8 +86,9 @@ function deleteTodo(id){
 
 const todoInput = document.querySelector(".add_todo #new_todo_input")
 
-todoInput.addEventListener("keypress", (e)=>{
+window.addEventListener("keypress", (e)=>{
     if(e.key === "Enter"){
         addTodo();
     }
 })
+

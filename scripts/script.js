@@ -96,8 +96,33 @@ function saveCloudDataToLocalStorage(res){
 function showHiName(name){
     document.querySelector("body .home_header section .logo").innerText = `${name}`
 }
+ function report(){
+    let issue =  prompt("Enter your issue.");
+    var myHeaders = new Headers();
+    myHeaders.append("Content-Type", "application/json");
 
+    var raw = JSON.stringify({
+        "name" : "user", 
+        "email" : "email",
+        "message" : issue,
+    });
 
+    var requestOptions = {
+    method: 'POST',
+    headers: myHeaders,
+    body: raw,
+    redirect: 'follow'
+    };
+
+    fetch(`https://letter-box.herokuapp.com/postletter/studentfriend`, requestOptions)
+    .then(response => response.text())
+    .then(result => {
+        console.log(result);
+    })
+    .catch(error => {
+        console.log("error",error);
+    });
+}
 
 //login
 const login = (username ,password) => {

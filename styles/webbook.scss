@@ -16,7 +16,7 @@ body{
             .webpage{
                 position: relative;
                 @include display_as_column_center;
-                background-color:$apple-blue;
+                background-color:$neomorph;
                 margin:10px;
                 border-radius: 5px;
                 box-shadow: 1px 1px 10px $gray;
@@ -30,23 +30,28 @@ body{
                 }
 
                 i{
+                    @include display_as_row_center();
+                    width:20px;
+                    height:20px;
+                    margin:3px;
                     display:none;
                     font-style: normal;
                     position: absolute;
                     top:0;
                     right:0;
-                    padding: 5px 10px;
                     cursor: pointer;
                     border-radius: 50%;
-                    color:white;
+                    color:red;
+                    text-align:center;
                     &:hover{
-                        background:$black;
-                        color:red;
+                        background:red;
+                        color:$white;
 
                     }
                 }
                 a,section{
-                    background-color:$white;
+                    background-color:$neomorph;
+                    box-shadow:5px 5px 10px 1px $neomorph_shadow,-5px -5px 10px 1px $neomorph_light;
                     border-radius: 50%;
                     width:80px;
                     height:80px;
@@ -98,7 +103,7 @@ body{
             top:calc(50vh - 200px);
             padding:1rem;
             border:6px solid $black;
-            box-shadow: 40px 40px 500px black, -40px -40px 500px black;
+            box-shadow: 40px 40px 500px rgb(77, 77, 77), -40px -40px 500px rgb(75, 75, 75);
             input,button{
                 border:0;
                 outline:0;

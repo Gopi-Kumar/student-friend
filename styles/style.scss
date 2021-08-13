@@ -28,7 +28,7 @@ body{
         #authButtons{
             @include display_as_row_center;
         }
-        #login, #newuser,#logout, #upload{
+        #login, #newuser,#logout, #upload,#report{
             margin:5px;
             background :$apple-blue;
             outline:None;

@@ -206,7 +206,7 @@ body .webpages_container .webpages .webpage {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: #0a84ff;
+  background-color: #f0f0f0;
   margin: 10px;
   border-radius: 5px;
   box-shadow: 1px 1px 10px gray;
@@ -220,22 +220,30 @@ body .webpages_container .webpages .webpage:hover i {
   }
 }
 body .webpages_container .webpages .webpage i {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 20px;
+  height: 20px;
+  margin: 3px;
   display: none;
   font-style: normal;
   position: absolute;
   top: 0;
   right: 0;
-  padding: 5px 10px;
   cursor: pointer;
   border-radius: 50%;
-  color: white;
+  color: red;
+  text-align: center;
 }
 body .webpages_container .webpages .webpage i:hover {
-  background: #3a3a3c;
-  color: red;
+  background: red;
+  color: white;
 }
 body .webpages_container .webpages .webpage a, body .webpages_container .webpages .webpage section {
-  background-color: white;
+  background-color: #f0f0f0;
+  box-shadow: 5px 5px 10px 1px #d6d6d6, -5px -5px 10px 1px white;
   border-radius: 50%;
   width: 80px;
   height: 80px;
@@ -287,7 +295,7 @@ body .webpages_container .webpage_editing {
   top: calc(50vh - 200px);
   padding: 1rem;
   border: 6px solid #3a3a3c;
-  box-shadow: 40px 40px 500px black, -40px -40px 500px black;
+  box-shadow: 40px 40px 500px #4d4d4d, -40px -40px 500px #4b4b4b;
 }
 body .webpages_container .webpage_editing input, body .webpages_container .webpage_editing button {
   border: 0;

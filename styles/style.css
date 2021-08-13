@@ -125,7 +125,7 @@ body .home_header #authButtons {
   justify-content: center;
   align-items: center;
 }
-body .home_header #login, body .home_header #newuser, body .home_header #logout, body .home_header #upload {
+body .home_header #login, body .home_header #newuser, body .home_header #logout, body .home_header #upload, body .home_header #report {
   margin: 5px;
   background: #0a84ff;
   outline: None;

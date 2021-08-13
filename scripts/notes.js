@@ -13,6 +13,7 @@ function getRandomId(){
 }
 
 function showNotes(note, title){
+    disableScroll();
     let show_note_container = document.querySelector(".show_note");
     show_note_container.style.display = "flex"
     let html = `
@@ -27,6 +28,7 @@ function showNotes(note, title){
     show_note_container.innerHTML = html;
 }
 function closeShowingNote(){
+    enableScroll();
     document.querySelector(".show_note").style.display = "none"
 }
 
@@ -85,13 +87,22 @@ function clearInputField(){
     noteNameInput.value = "";
 }
 
+function disableScroll(){
+    document.body.style.overflow = "hidden";
+}
+function enableScroll(){
+    document.body.style.overflow = "scroll";
+}
 function addNewNote(){
     newNoteForm.style.display = "block";
+    disableScroll();
 }
 function closeNotesEditing(){
     newNoteForm.style.display = "none";
+    enableScroll();
 }
 function saveNote(){
+    enableScroll();
     let noteText = document.querySelector("textarea").value;
     let note_name = document.querySelector("#note_name").value;
     if(noteText == "" || note_name == ""){
@@ -151,7 +162,7 @@ function deleteNote(){
 
 
 function editNote(){
-
+    disableScroll();
     newNoteForm.style.display = "block";
     let cancelButton = document.querySelectorAll(".save_and_cancel button")[0];
     cancelButton.innerHTML = "Delete";

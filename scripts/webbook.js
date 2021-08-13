@@ -48,14 +48,14 @@ function renderWebPages(webPagesArray){
     webPagesArray.map(item => {
         const itemContainer = document.createElement("div");
         itemContainer.classList.add("webpage");
-        itemContainer.style.backgroundColor = `rgb(${rcc()}, ${rcc()}, ${rcc()})`
+        // itemContainer.style.color = `rgb(${rcc()}, ${rcc()}, ${rcc()})`
         itemContainer.setAttribute("id", `${item.id}`);
         itemContainer.setAttribute("title", "Click to open")
         const html = `
             <i onclick="deleteWebPage(this)" title="Delete this webpage" >
                 x
             </i>
-            <a href="${item.href}" target="blank"><p>${item.name}</p></a>
+            <a href="${item.href}" style='color:rgb(${rcc()}, ${rcc()}, ${rcc()}' target="blank"><p>${item.name}</p></a>
         `
         itemContainer.innerHTML = html;
         webPagesContainer.appendChild(itemContainer);
