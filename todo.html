@@ -4,11 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SF::Todo</title>
-    <link rel="shortcut icon" href="./images/checklists.png" type="image/x-icon">
-
-    <link rel="stylesheet" href="./styles/todo.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" type="text/css" href="./styles/todo.css">
+    <title>Todo:Advance</title>
 </head>
 <body>
     <div class="header">
@@ -24,12 +21,30 @@
 
         </div>
     </div>
-    <div class="todos">
-
+    <div id="main_container">
+        <div id="todo_navbar">
+            <div id="all_lists_container">
+            </div>
+        </div>
+        <div id="todo_container">
+            <div id="todo_items">
+            </div>
+            <div id="todo_input_container">
+                    <input type="text" placeholder="Enter your task here" name="" id="todo_input">
+                    <button onclick="addNewTodo()">Add</button>
+            </div>
+        </div>
     </div>
-    <div class="notifications"></div>
-    <script src="./scripts/notification.js"  defer></script>
-    <script src="./scripts/dropdown.js"  defer></script>
+    <div class="new_todo_input_form">
+        <input type="text" id="new_todo_input" placeholder="Enter list name">
+        <div class="buttons">
+            <button onclick="closeListInput()">Cancel</button>
+            <button onclick="saveTodoList()">OK</button>
+        </div>
+    </div>
+    <script src="./scripts/todo.js"></script>
+    <script src="./scripts/notification.js"></script>
+    <script src="./scripts/dropdown.js"></script>
+    <script src="./scripts/processing.js"></script>
 </body>
-<script src="./scripts/todo.js" defer></script>
-</html>
+</html>6

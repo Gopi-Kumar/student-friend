@@ -1,0 +1,75 @@
+@import './color.scss';
+@import './utills.scss';
+@import './header.scss';
+
+body{
+    @include display_as_column_center;
+    width:100%;
+    background:$light-gray;
+    .todos{
+        @include display_as_column;
+        align-items: center;
+        background-color: $white;
+        height: 500px;
+        overflow-y: scroll;
+        font-weight: 300;
+        padding:10px;
+        margin-top: 10px;
+        // border: 2px 
+        // solid $apple-blue;
+        .todo_item{
+            @include display_as_row;
+            align-items:center;
+            width:300px;
+            padding:5px 0px;
+            font-size: 15px;
+            
+            p{
+                padding-left:5px;
+                
+            }
+            input{
+                cursor:pointer;
+                width:20px;
+                height:20px;
+            }
+            
+        }
+
+    }
+    .add_todo{
+        @include display_as_row_center;
+        width:100%;
+        margin-top: 5px;
+        // position:fixed;
+        // bottom:10px;
+        input{
+            // width:240px;
+            min-width: 250px;
+            height:30px;
+            outline-color: $apple-blue;
+            // margin-top: 10px;
+        }
+        button{
+            cursor:pointer;
+            background:$apple-blue;
+            outline:0;
+            border:0;
+            color:$white;
+            border-radius: 5px;
+            font-size: 20px;
+            width:30px;
+            margin-left: 3px;
+        }
+    }
+
+}
+
+
+@media only screen and (max-width: 350px) {
+    body .todos{
+        margin-top:0px;
+        width:100%;
+
+    }
+}
