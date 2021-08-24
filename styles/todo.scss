@@ -1,75 +1,242 @@
-@import './color.scss';
 @import './utills.scss';
 @import './header.scss';
+$primary_background : rgb(0, 27, 54);
+$secondry_background : rgb(14, 14, 131);
+$todo_text : white;
+$header_background: rgb(1, 40, 126);
+$navbar_background:rgb(0, 0, 87);
+$input_background:rgb(1, 53, 105);
 
-body{
-    @include display_as_column_center;
-    width:100%;
-    background:$light-gray;
-    .todos{
-        @include display_as_column;
-        align-items: center;
-        background-color: $white;
-        height: 500px;
-        overflow-y: scroll;
-        font-weight: 300;
-        padding:10px;
-        margin-top: 10px;
-        // border: 2px 
-        // solid $apple-blue;
-        .todo_item{
-            @include display_as_row;
-            align-items:center;
-            width:300px;
-            padding:5px 0px;
-            font-size: 15px;
-            
-            p{
-                padding-left:5px;
-                
-            }
-            input{
-                cursor:pointer;
-                width:20px;
-                height:20px;
-            }
-            
-        }
-
-    }
-    .add_todo{
-        @include display_as_row_center;
-        width:100%;
-        margin-top: 5px;
-        // position:fixed;
-        // bottom:10px;
-        input{
-            // width:240px;
-            min-width: 250px;
-            height:30px;
-            outline-color: $apple-blue;
-            // margin-top: 10px;
-        }
-        button{
-            cursor:pointer;
-            background:$apple-blue;
-            outline:0;
-            border:0;
-            color:$white;
-            border-radius: 5px;
-            font-size: 20px;
-            width:30px;
-            margin-left: 3px;
-        }
-    }
-
+::-webkit-scrollbar {
+    width: 10px;
+}
+  
+/* Track */
+::-webkit-scrollbar-track {
+box-shadow: inset 0 0 5px $secondry_background; 
+}
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: $secondry_background; 
+    border-radius: 15px;
 }
 
 
-@media only screen and (max-width: 350px) {
-    body .todos{
-        margin-top:0px;
-        width:100%;
+body{
+    overflow:hidden;
+    background-color: $primary_background;
+    color:$todo_text;
+    font-smooth: smooth;
+    .todo_header{
+        background:$header_background;
+        font-size: 20px;
+        @include display_as_row_center();
+        padding:20px;
+    }
+    .active_list{
+        background:$primary_background;
+    }
+    #main_container{
+        width:100vw;
+        @include display_as_row_center();
+        #todo_navbar{
+            // overflow-y:scroll;
 
+            height: 100vh;
+            width:300px;
+            // overflow: scroll;
+            background:$navbar_background;
+            #all_lists_container{
+
+                section,button{
+                    border-bottom:1px solid rgba(0, 0, 255, 0.397);
+                    // padding:15px;
+                    @include display_as_row_space_between();
+                    cursor:pointer;
+                    &:hover{
+                        background:$primary_background;
+                    }
+                    p{
+                        padding:12px 5px;
+                    }
+                    span{
+                        // @include display_as_row_center();
+                        padding:4px 7px;
+                        border-radius: 50%;
+                        background:rgba(172, 45, 45, 0.897);
+                        color:rgb(182, 180, 49);
+                        font-weight: bold;
+                        font-size: 14px;
+                        margin-left: 5px;
+                    }
+                    .fa-list{
+                        // display: none;
+                        margin:5px;
+                        // font-size: 12px;
+                    }
+                    .fa-trash{
+                        padding:10px;
+                        &:hover{
+                            color:red;
+                        }
+                    
+                    }
+                    &:nth-child(2){
+                        .fa-trash{
+                            display: none;
+                        }
+                    }
+                    
+                }
+               .create_list,
+               .all_list{
+                   padding:15px 5px;
+               }
+                button{
+                    background:transparent;
+                    width:100%;
+                    outline:none;
+                    border:none;
+                    text-align: center;
+                    padding-left: 15px;
+                    color:white;
+                    font-size:15px;
+
+                }
+            }
+        }
+        #todo_container{
+            overflow-y:scroll;
+            width:calc(100vw - 150px);
+            height:100vh;
+            @include display_as_column();
+            align-items: center;
+            padding-bottom: 60px;
+            #todo_items{
+                width:100%;
+                @include display_as_column();
+                align-items: center;
+                .todo_item,.completed_item{
+                    width:90%;
+                    background:$secondry_background;
+                    border-radius: 5px;
+                    min-width:300px;
+                    @include display_as_row();
+                    align-items: center;
+                    padding:10px 15px;
+                    margin:7px;
+                    border:1px solid rgba(255, 255, 255, 0.438);
+                    .checkbox{
+                        @include display_as_row_center();
+                        cursor: pointer;
+                        width:25px;
+                        height:25px;
+                        background:$primary_background;
+                        border:1px solid rgba(255, 255, 255, 0.384);
+                        border-radius: 2px;
+                        margin:15px;
+                        i{
+                            display:none;
+                            color:rgb(5, 231, 5);
+                        }
+                    }
+                    section{
+                        @include display_as_column();
+                        p{
+                            &:nth-child(2){
+                                font-size: 13px;
+                            }
+                        }
+                    }
+                }
+                .completed_item{
+                    opacity: 0.3;
+                    border:none;
+                    filter:grayscale(0.5);
+                    .checkbox{
+                        cursor: none;
+
+                        i{
+                            color:gray;
+                            display:block;
+                        }
+                    }
+                }
+            }
+            #todo_input_container{
+                border-radius:29px;
+                overflow:hidden;
+                width:50vw;
+                position: fixed;
+                bottom: 10px;
+                min-width: 300px;
+                @include display_as_row();
+                border:2px solid $primary_background;
+                box-shadow: 2px 2px 5px black;
+                input{
+                    width:calc(100% - 50px);
+                    height:40px;
+                    outline:none;
+                    border:none;
+                    background:$input_background;
+                    padding:15px;
+                    font-size: 16px;
+                    color:white;
+                    &::placeholder{
+                        color:$primary_background;
+                        font-weight: bold;
+                        font-size: 13px;
+                    }
+                }
+                button{
+                    @include display_as_row_center();
+                    background:$primary_background;
+                    outline:none;
+                    border:none;
+                    font-size: 15px;
+                    padding:15px;
+                    height:40px;
+                    cursor:pointer;
+                    color:white;
+                }
+            }
+        }
+    }
+    .new_todo_input_form{
+        width:300px;
+        height:120px;
+        background:$primary_background;
+        position: absolute;
+        left:calc(50% - 150px);
+        top:calc(50% - 75px);
+        border:2px solid $primary_background;
+        box-shadow: 2px 2px 5px black;
+        @include display_as_column_center();
+        display: none;
+
+        input{
+            background:$input_background;
+            outline:None;
+            border:none;
+            width:250px;
+            height:30px;
+            color:white;
+            padding:5px;
+        }
+        .buttons{
+            width:250px;
+            @include display_as_row_space_between();
+            button{
+                cursor: pointer;
+                background:$secondry_background;
+                outline:None;
+                border:None;
+                padding:8px 15px;
+                margin-top:15px;
+                border-radius: 5px;
+                color:white;
+            }
+        }
     }
 }

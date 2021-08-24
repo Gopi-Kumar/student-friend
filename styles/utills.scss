@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
 @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css');
 @import url('https://fonts.googleapis.com/css2?family=Heebo:wght@100;300;400;600;700;900&display=swap');
-@import "./color.css";
+@import "./color.scss";
 *{
     margin:0;
     padding:0;
@@ -45,20 +45,20 @@
     justify-content: space-between;
     align-items: center;
 }
-::-webkit-scrollbar {
-    width: 10px;
-}
+// ::-webkit-scrollbar {
+//     width: 10px;
+// }
   
-/* Track */
-::-webkit-scrollbar-track {
-box-shadow: inset 0 0 1px gray; 
-}
+// /* Track */
+// ::-webkit-scrollbar-track {
+// box-shadow: inset 0 0 1px gray; 
+// }
    
-  /* Handle */
-  ::-webkit-scrollbar-thumb {
-    background: $black; 
-    border-radius: 10px;
-  }
+//   /* Handle */
+//   ::-webkit-scrollbar-thumb {
+//     background: black; 
+//     border-radius: 10px;
+//   }
 
   .notifications{
     position: absolute;
@@ -71,7 +71,7 @@ box-shadow: inset 0 0 1px gray;
         padding:10px;
         border-radius: 10px;
         font-size: 12px;
-        background:$red;
+        background:red;
         color:$white;
         @include display_as_row_space_between;
         button{
