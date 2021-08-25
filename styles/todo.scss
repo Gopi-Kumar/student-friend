@@ -7,6 +7,13 @@ $header_background: rgb(1, 40, 126);
 $navbar_background:rgb(0, 0, 87);
 $input_background:rgb(1, 53, 105);
 
+$primary_background : $apple-blue;
+$secondry_background : $apple-blue;
+$todo_text : white;
+$header_background: rgb(1, 40, 126);
+$navbar_background:$dark-apple-blue;
+$input_background:rgb(1, 53, 105);
+
 ::-webkit-scrollbar {
     width: 10px;
 }
@@ -35,7 +42,7 @@ body{
         padding:20px;
     }
     .active_list{
-        background:$primary_background;
+        background:$apple-blue;
     }
     #main_container{
         width:100vw;
@@ -119,21 +126,21 @@ body{
                 align-items: center;
                 .todo_item,.completed_item{
                     width:90%;
-                    background:$secondry_background;
+                    background:$navbar_background;
                     border-radius: 5px;
                     min-width:300px;
                     @include display_as_row();
                     align-items: center;
                     padding:10px 15px;
                     margin:7px;
-                    border:1px solid rgba(255, 255, 255, 0.438);
+                    border:2px solid rgb(255, 255, 255);
                     .checkbox{
                         @include display_as_row_center();
                         cursor: pointer;
                         width:25px;
                         height:25px;
                         background:$primary_background;
-                        border:1px solid rgba(255, 255, 255, 0.384);
+                        border:2px solid rgb(255, 255, 255);
                         border-radius: 2px;
                         margin:15px;
                         i{
@@ -151,9 +158,9 @@ body{
                     }
                 }
                 .completed_item{
-                    opacity: 0.3;
+                    opacity: 0.6;
                     border:none;
-                    filter:grayscale(0.5);
+                    filter:grayscale(0.8);
                     .checkbox{
                         cursor: none;
 
@@ -172,7 +179,7 @@ body{
                 bottom: 10px;
                 min-width: 300px;
                 @include display_as_row();
-                border:2px solid $primary_background;
+                border:2px solid $white;
                 box-shadow: 2px 2px 5px black;
                 input{
                     width:calc(100% - 50px);

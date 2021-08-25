@@ -174,18 +174,18 @@
 
 /* Track */
 ::-webkit-scrollbar-track {
-  box-shadow: inset 0 0 5px #0e0e83;
+  box-shadow: inset 0 0 5px #0a84ff;
 }
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: #0e0e83;
+  background: #0a84ff;
   border-radius: 15px;
 }
 
 body {
   overflow: hidden;
-  background-color: #001b36;
+  background-color: #0a84ff;
   color: white;
   font-smooth: smooth;
 }
@@ -199,7 +199,7 @@ body .todo_header {
   padding: 20px;
 }
 body .active_list {
-  background: #001b36;
+  background: #0a84ff;
 }
 body #main_container {
   width: 100vw;
@@ -211,7 +211,7 @@ body #main_container {
 body #main_container #todo_navbar {
   height: 100vh;
   width: 300px;
-  background: #000057;
+  background: #004d99;
 }
 body #main_container #todo_navbar #all_lists_container section, body #main_container #todo_navbar #all_lists_container button {
   border-bottom: 1px solid rgba(0, 0, 255, 0.397);
@@ -222,7 +222,7 @@ body #main_container #todo_navbar #all_lists_container section, body #main_conta
   cursor: pointer;
 }
 body #main_container #todo_navbar #all_lists_container section:hover, body #main_container #todo_navbar #all_lists_container button:hover {
-  background: #001b36;
+  background: #0a84ff;
 }
 body #main_container #todo_navbar #all_lists_container section p, body #main_container #todo_navbar #all_lists_container button p {
   padding: 12px 5px;
@@ -279,7 +279,7 @@ body #main_container #todo_container #todo_items {
 }
 body #main_container #todo_container #todo_items .todo_item, body #main_container #todo_container #todo_items .completed_item {
   width: 90%;
-  background: #0e0e83;
+  background: #004d99;
   border-radius: 5px;
   min-width: 300px;
   display: flex;
@@ -287,7 +287,7 @@ body #main_container #todo_container #todo_items .todo_item, body #main_containe
   align-items: center;
   padding: 10px 15px;
   margin: 7px;
-  border: 1px solid rgba(255, 255, 255, 0.438);
+  border: 2px solid white;
 }
 body #main_container #todo_container #todo_items .todo_item .checkbox, body #main_container #todo_container #todo_items .completed_item .checkbox {
   display: flex;
@@ -297,8 +297,8 @@ body #main_container #todo_container #todo_items .todo_item .checkbox, body #mai
   cursor: pointer;
   width: 25px;
   height: 25px;
-  background: #001b36;
-  border: 1px solid rgba(255, 255, 255, 0.384);
+  background: #0a84ff;
+  border: 2px solid white;
   border-radius: 2px;
   margin: 15px;
 }
@@ -314,9 +314,9 @@ body #main_container #todo_container #todo_items .todo_item section p:nth-child(
   font-size: 13px;
 }
 body #main_container #todo_container #todo_items .completed_item {
-  opacity: 0.3;
+  opacity: 0.6;
   border: none;
-  filter: grayscale(0.5);
+  filter: grayscale(0.8);
 }
 body #main_container #todo_container #todo_items .completed_item .checkbox {
   cursor: none;
@@ -334,7 +334,7 @@ body #main_container #todo_container #todo_input_container {
   min-width: 300px;
   display: flex;
   flex-direction: row;
-  border: 2px solid #001b36;
+  border: 2px solid white;
   box-shadow: 2px 2px 5px black;
 }
 body #main_container #todo_container #todo_input_container input {
@@ -348,7 +348,7 @@ body #main_container #todo_container #todo_input_container input {
   color: white;
 }
 body #main_container #todo_container #todo_input_container input::placeholder {
-  color: #001b36;
+  color: #0a84ff;
   font-weight: bold;
   font-size: 13px;
 }
@@ -357,7 +357,7 @@ body #main_container #todo_container #todo_input_container button {
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  background: #001b36;
+  background: #0a84ff;
   outline: none;
   border: none;
   font-size: 15px;
@@ -369,11 +369,11 @@ body #main_container #todo_container #todo_input_container button {
 body .new_todo_input_form {
   width: 300px;
   height: 120px;
-  background: #001b36;
+  background: #0a84ff;
   position: absolute;
   left: calc(50% - 150px);
   top: calc(50% - 75px);
-  border: 2px solid #001b36;
+  border: 2px solid #0a84ff;
   box-shadow: 2px 2px 5px black;
   display: flex;
   flex-direction: column;
@@ -399,7 +399,7 @@ body .new_todo_input_form .buttons {
 }
 body .new_todo_input_form .buttons button {
   cursor: pointer;
-  background: #0e0e83;
+  background: #0a84ff;
   outline: None;
   border: None;
   padding: 8px 15px;
