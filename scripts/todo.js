@@ -5,6 +5,7 @@ function getTodosFromLocalStorage(){
 getTodosFromLocalStorage();
 
 let currentSelectedListIndex = 0;
+let previousSelectedList;
 const todo_container = document.getElementById("todo_items");
 
 
@@ -82,7 +83,7 @@ function renderList(){
         section.classList.add("list");
 
         let html = `
-            <p onclick="renderSpecificListTodos(this.parentNode.id)"><i class="fas fa-list"></i>${todo.list_name} <span>${todo.todo_item.length}</span> </p>
+            <p onclick="renderSpecificListTodos(this.parentNode.id,this)"><i class="fas fa-list"></i>${todo.list_name} <span>${todo.todo_item.length}</span> </p>
             <i class="fas fa-trash" onclick="deleteTodoList(this)"></i>
         `
 
@@ -98,7 +99,10 @@ function renderList(){
 renderList();
 
 
-function renderSpecificListTodos(listId){
+function renderSpecificListTodos(listId,ele){
+    previousSelectedList.classList.remove("active_list");
+    ele.parentNode.classList.add("active_list");
+    previousSelectedList = ele.parentNode;
     currentSelectedListIndex =listId;
     todo_container.innerHTML = "";
     todos[listId].todo_item.map(item => {
@@ -134,6 +138,7 @@ function renderSpecificListTodos(listId){
              todo_container.appendChild(todo_item)
      })
 }
+previousSelectedList = document.getElementById("list_heading");
 
 //new todo 
 
