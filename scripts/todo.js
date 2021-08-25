@@ -100,9 +100,12 @@ renderList();
 
 
 function renderSpecificListTodos(listId,ele){
-    previousSelectedList.classList.remove("active_list");
-    ele.parentNode.classList.add("active_list");
-    previousSelectedList = ele.parentNode;
+    if(ele != null){
+        previousSelectedList.classList.remove("active_list");
+        ele.parentNode.classList.add("active_list");
+        previousSelectedList = ele.parentNode;
+    }
+    
     currentSelectedListIndex =listId;
     todo_container.innerHTML = "";
     todos[listId].todo_item.map(item => {
@@ -224,4 +227,23 @@ function deleteTodoList(args) {
     saveTodoToLocalStorage();
     renderList();
     renderTodo();
+}
+
+//list dropdown;
+let listOpened = false;
+function showAllList(){
+    let dropdownButton =  document.querySelector(".todo_header i");
+    let todoNavbar =  document.getElementById("todo_navbar");
+    if(!listOpened){
+        dropdownButton.classList.remove("fa-bars");
+        dropdownButton.classList.add("fa-window-close");
+        todoNavbar.style.display = "block";
+        listOpened = true;
+        return;
+    }
+    dropdownButton.classList.add("fa-bars");
+    dropdownButton.classList.remove("fa-window-close");
+    todoNavbar.style.display = "none";
+    listOpened = false;
+    return;
 }

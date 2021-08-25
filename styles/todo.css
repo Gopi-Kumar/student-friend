@@ -201,6 +201,9 @@ body .todo_header {
 body .active_list {
   background: #0a84ff;
 }
+body .todo_header {
+  display: none;
+}
 body #main_container {
   width: 100vw;
   display: flex;
@@ -369,11 +372,11 @@ body #main_container #todo_container #todo_input_container button {
 body .new_todo_input_form {
   width: 300px;
   height: 120px;
-  background: #0a84ff;
+  background: #004d99;
   position: absolute;
   left: calc(50% - 150px);
   top: calc(50% - 75px);
-  border: 2px solid #0a84ff;
+  border: 2px solid white;
   box-shadow: 2px 2px 5px black;
   display: flex;
   flex-direction: column;
@@ -406,6 +409,28 @@ body .new_todo_input_form .buttons button {
   margin-top: 15px;
   border-radius: 5px;
   color: white;
+}
+
+@media only screen and (max-width: 600px) {
+  body .todo_header {
+    display: flex;
+    justify-content: flex-start;
+    cursor: pointer;
+  }
+  body .todo_header i {
+    padding: 5px;
+  }
+  body #main_container #todo_navbar {
+    display: none;
+    position: fixed;
+    width: 300px;
+    left: 0px;
+    background: #004d99;
+    z-index: 23;
+  }
+  body #main_container #todo_container {
+    width: auto;
+  }
 }
 
 /*# sourceMappingURL=todo.css.map */

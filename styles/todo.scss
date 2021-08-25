@@ -44,6 +44,9 @@ body{
     .active_list{
         background:$apple-blue;
     }
+    .todo_header{
+        display: none;
+    }
     #main_container{
         width:100vw;
         @include display_as_row_center();
@@ -213,11 +216,11 @@ body{
     .new_todo_input_form{
         width:300px;
         height:120px;
-        background:$primary_background;
+        background:$navbar_background;
         position: absolute;
         left:calc(50% - 150px);
         top:calc(50% - 75px);
-        border:2px solid $primary_background;
+        border:2px solid $white;
         box-shadow: 2px 2px 5px black;
         @include display_as_column_center();
         display: none;
@@ -243,6 +246,32 @@ body{
                 margin-top:15px;
                 border-radius: 5px;
                 color:white;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width:600px){
+    body{
+        .todo_header{
+            display: flex;
+            justify-content:flex-start;
+            cursor: pointer;
+            i{
+                padding:5px;
+            }
+        }
+        #main_container{
+            #todo_navbar{
+                display: none;
+                position: fixed;
+                width:300px;
+                left:0px;
+                background:$dark-apple-blue;
+                z-index: 23;
+            }
+            #todo_container{
+                width:auto;
             }
         }
     }
